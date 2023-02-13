@@ -1,38 +1,109 @@
-.App {
+html {
+  background-color: black;
+  display:fixed;
+}
+
+body {
+  background-color:grey;
+  
+  margin-left: 7vw;
+  margin-right:7vw;
+  margin-top: 5vh;
+  margin-bottom:5vh;
+  height:100vh;
+  overflow:scroll;
+}
+
+.appTitle {
+  background-color: lightblue;
+  width:86vw;
+  margin:auto;
+  margin-left:3vw;
+  text-align:left;
+  height:5vh;
+  font-size: 5vh;
+}
+
+.navContainer {
+  background-color: lightblue;
+  height:14vh;
+  display:flex;
+}
+
+.navBar {
+  width: 86vw;
+  
+  list-style:none;
+  display:flex;
+  justify-content:flex-end;
+  align-items:top;
+}
+
+.navButton {
+  border:solid 3px black;
+  width:7vw;
+  height:3vh;
   text-align: center;
+  margin-top:auto;
+  margin-bottom: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navButton:hover {
+  background-color: black;
+  color:white;
+}
+.navButton:visited {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.transactionContainer {
+  background-color: white;
+  display:flex;
+}
+.transactions {
+  background-color: white;
+  border:solid 3px black;
+  height: 75vh;
+  width:65vw;
+  text-align:center;
+  margin:auto;
+  margin-top: 5vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.transactionLabel {
+  font-size: 3rem;
+
 }
 
-.App-link {
-  color: #61dafb;
+.deleteBtn {
+  border: solid 5px black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transactionPatchForm {
+  border: 5px solid black;
+  width:15vw;
+  height: 35vh;
+}
+
+.patchFormInput {
+  border:5px solid blue;
+}
+
+.listOfInvestments {
+  display:flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.investmentList {
+  overflow:scroll;
+}
+
+.investmentCard {
+  border: 5px solid yellow;
+  height:25vh;
+  width:15vw;
+  color:white;
+  margin:auto;
 }
