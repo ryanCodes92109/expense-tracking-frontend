@@ -25,19 +25,25 @@ function App() {
       .then(setAssets)
     }, [])
 
+    const addTransaction = newTransaction => {
+      setTransactionData(current => [...current, newTransaction])
+    }
+
   return (
     <div className="App">
-      <NavBar transactionData={transactionData}/>
+      <NavBar 
+        transactionData={transactionData}/>
         <Routes>
-          <Route path='/' element={<Home />}>
+          <Route path='/home' element={
+            <Home 
+              
+            />}>
           </Route>
           <Route path='/transactions' element={ 
             <Transactions 
+              addTransaction = {addTransaction}
               transactionData= {transactionData}
-              key = {transactionData.id} 
-              vendor_name={transactionData.vendor_name} 
-              amount_spent={transactionData.amount_spent} 
-              user_id={transactionData.user_id} 
+             
             />}>
           </Route>
             <Route path='/Assets' element={

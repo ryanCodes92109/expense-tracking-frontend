@@ -6,7 +6,7 @@ const NavBar = () => {
     <>        
         
         <div className='navContainer'>
-        <p className='appTitle'>WHERE MA MONEY</p>
+        <p className='appTitle'>ENTER NAME O' APP</p>
         <ul className='navBar'>
           <Link to='/home'>
             <li className='navButton'>Home</li>

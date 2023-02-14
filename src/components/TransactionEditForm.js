@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
-import { useParams} from 'react-router-dom'
-import { Form } from 'react-router-dom'
+import {useState} from 'react'
 
 
-const TransactionEditForm = ({setTransactionData,  vendor_name, amount_spent, id, transactionData}) => {
+const TransactionEditForm = ({transactionData, addTransaction}) => {
 
-  const initialFormValues = {
-    id: '',
+  const initialFormValues ={
     vendor_name: '',
     amount_spent: ''
   }
+
   const [formData, setFormData] = useState(initialFormValues)
-    
-const handleChange = ({target: {name, value}}) => {
-  // const { name, value } = e.target
-  setFormData({...formData, [name]: value })
+      // console.log(formData)
+
+const handleChange = (e) => {
+  const {name, value} = e.target
+  setFormData({...formData, [name]: value})
+
 }
 
 const handleSubmit = e => {
@@ -24,65 +24,58 @@ const handleSubmit = e => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(formData)
+    body: JSON.stringify(formData) 
   })
-    .then(res => {
-      if (res.status !==201) {
-        res.json()
-        .then(messageObj => messageObj.message) 
-      } else {
-        setFormData(initialFormValues)
-      }
-    })
+  .then(res => {
+    if (res.status !== 201) {
+      res.json()
+      .then(errorObj => console.log(errorObj.error))
+    } else {
+      res.json()
+      .then(t => addTransaction(t))
+    }
+
+  })
+  
 }
     
   return (
 
     <div>
-      <form 
+      {<form 
         className='transactionPatchForm' 
         onSubmit={handleSubmit}>
         <label>Edit Transaction</label>
             <br/>
 
           <div className = 'patchFormInput'>
-            <label>Transaction</label>
-            <input 
-              type='text'
-              placeholder='Transaction ID'
-              name={id}
-              value={transactionData.id}
-              onChange={handleChange}
-              ></input>
-              <br/>
-          </div>
-
-          <div className = 'patchFormInput'>
             <label>Place of Purchase</label>
               <br/>
             <input 
               type='text'
-              placeholder='Place of Purchase'
-              name={vendor_name}
-              value={transactionData.name}
+              placeholder='Store Name'
+              name='vendor_name'
+              value={formData.vendor_name}
               onChange={handleChange}
+
               ></input>
               <br/>
           </div>
 
           <div className = 'patchFormInput'>
             <label>Amount Spent</label>
+            <br/>
             <input 
               type='text'
-              placeholder='Amount Spent'
-              name={amount_spent}
-              value= {transactionData.amount_spent}
+              placeholder='Enter Cost'
+              name='amount_spent'
+              value={formData.amount_spent}
               onChange={handleChange}
               ></input>
             <br/>
           </div>
         <button type='submit' >Submit Change</button>
-      </form>
+      </form>}
     </div>
   )
 }

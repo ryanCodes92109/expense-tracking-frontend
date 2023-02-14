@@ -107,3 +107,30 @@ body {
   color:white;
   margin:auto;
 }
+
+.credentialContainer {
+  display:flex;
+  justify-content: center; 
+  align-items: center;
+  align-content:center; 
+  margin:auto;
+}
+
+.signinForm {
+  border: solid 5px black;
+  width:15vw;
+  height:35vh;
+  background-color: lightblue;
+  align-content:center;
+  margin:auto;
+}
+
+.signUpForm {
+  border: solid 5px black;
+  width:15vw;
+  height:40vh;
+  background-color: lightblue;
+  align-content:center;
+  margin:auto;
+}
+

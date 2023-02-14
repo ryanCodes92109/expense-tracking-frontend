@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import TransactionEditForm from './TransactionEditForm';
 
-const Transactions = ({transactionData}) => {
+const Transactions = ({transactionData, addTransaction}) => {
+  const [selectionModel,setSelectionModel] = useState()
 
     const columns = [
     {field:"id", headerName:'Id'},
@@ -10,14 +11,14 @@ const Transactions = ({transactionData}) => {
     {field:"amount_spent", headerName:'Cost', width:300}    
     ]
 
-    const [selectionModel,setSelectionModel] = useState()
-
+    
 
 
   return (
     <div className='transactionsContainer'>
         <TransactionEditForm 
           transactionData={transactionData}
+          addTransaction={addTransaction}
         />
         <div className='transactions'>
           <label className='transactionLabel'>Transactions</label>
