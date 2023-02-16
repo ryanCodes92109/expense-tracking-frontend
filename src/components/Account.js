@@ -3,6 +3,7 @@ import Signup from "./Signup"
 import Transactions from "./Transactions"
 import {useState, useContext} from 'react';
 import { UserContext } from '../context/UserContext';
+import Assets from "./Assets";
 
 const Account = () => {
 const {user} = useContext(UserContext)
@@ -17,6 +18,7 @@ const {user} = useContext(UserContext)
   return (
     <div>
         <Transactions />
+        
     </div>
   )
 }

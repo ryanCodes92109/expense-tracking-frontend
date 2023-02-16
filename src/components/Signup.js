@@ -4,12 +4,29 @@ import { UserContext } from '../context/UserContext'
 
 const Signup = ({setToggleAuth}) => {
 
-const {  createUserSubmit, signupHandleChange,signupFormData  } = useContext(UserContext)
+  const [signupFormData,setSignupFormData] = useState({
+    first_name: '',
+    last_name: '' ,
+    email: '',
+    password: ''
+  })
+
+  const signupHandleChange = ({target: {name, value}}) => {
+    setSignupFormData(currentUser => (
+      { ...currentUser, [name]: value }
+      ))
+    console.log('typing')
+  }
+
+const {  createUserSubmit  } = useContext(UserContext)
+console.log(signupFormData)
+
 
   return (
     <div>
       <form 
-        onSubmit={(e) => createUserSubmit(e, signupFormData)}
+        onSubmit={e => createUserSubmit(e,signupFormData)}
+        // onSubmit={(e) => createUserSubmit(e, signupFormData)}
         className= 'signUpForm'>
         <label>First Name</label>
           <br/>

@@ -2,27 +2,35 @@ import {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 
 
-const TransactionEditForm = ({transactionData, addTransaction}) => {
+const TransactionEditForm = ({transactionData, setTransactionData}) => {
+  const {setUser} = useContext(UserContext)
   
-  const initialFormValues ={
+  const initialTransactionFormValues ={
     vendor_name: '',
     amount_spent: ''
   }
-  const [formData, setFormData] = useState(initialFormValues)
+  const [formTransactionData, setFormTransactionData] = useState(initialTransactionFormValues)
 
-const handleChange = (e) => {
+  
+
+const handleTransactionChange = (e) => {
   const {name, value} = e.target
-  setFormData({...formData, [name]: value})
+  setFormTransactionData({ ...formTransactionData,[name]: value })
 }
-
-const handleSubmit = e => {
+const addTransaction = newTransaction => {
+  setUser(currentUser => ({...currentUser, transactions: [...currentUser.transactions, newTransaction]}) )
+}
+// const addAsset = newAsset => {
+//   setUser(currentUser => ({...currentUser, created_assets: [...currentUser.created_assets, newAsset]}) )
+// }
+const handleTransactionSubmit = e => {
   e.preventDefault()
   fetch('/transactions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(formData) 
+    body: JSON.stringify(formTransactionData) 
   })
   .then(res => {
     if (res.status !== 201) {
@@ -30,7 +38,9 @@ const handleSubmit = e => {
       .then(errorObj => console.log(errorObj.error))
     } else {
       res.json()
-      .then(t => addTransaction(t))
+      .then(addTransaction)
+
+      // .then(t => addTransaction(t))
     }
 
   })
@@ -42,7 +52,7 @@ const handleSubmit = e => {
     <div>
       {<form 
         className='transactionPatchForm' 
-        onSubmit={handleSubmit}>
+        onSubmit={handleTransactionSubmit}>
         <label>Add New Transaction</label>
             <br/>
 
@@ -53,8 +63,8 @@ const handleSubmit = e => {
               type='text'
               placeholder='Store Name'
               name='vendor_name'
-              value={formData.vendor_name}
-              onChange={handleChange}
+              value={formTransactionData.vendor_name}
+              onChange={handleTransactionChange}
               ></input>
               <br/>
           </div>
@@ -66,8 +76,8 @@ const handleSubmit = e => {
               type='text'
               placeholder='Enter Cost'
               name='amount_spent'
-              value={formData.amount_spent}
-              onChange={handleChange}
+              value={formTransactionData.amount_spent}
+              onChange={handleTransactionChange}
               ></input>
             <br/>
           </div>

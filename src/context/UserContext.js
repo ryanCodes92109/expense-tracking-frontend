@@ -5,12 +5,7 @@ const UserProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
 
-const [signupFormData,setSignupFormData] = useState({
-    first_name: '',
-    last_name: '' ,
-    email: '',
-    password: ''
-  })
+
 
   const [selectionModel,setSelectionModel] = useState()
 
@@ -33,14 +28,14 @@ useEffect(() => {
 
     //fetch for login and create and logout
     
-    const loginSubmit = (e,formData) => {
+    const loginSubmit = (e,loginFormData) => {
         e.preventDefault()
         fetch('/login', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(loginFormData),
         })
         .then(res => res.json())
         .then(userObj => setUser(userObj))
@@ -49,17 +44,18 @@ useEffect(() => {
         console.log('submitting')
       }
     
-      const createUserSubmit = (e, formData) => {
+      const createUserSubmit = (e, signupFormData) => {
         e.preventDefault()
         fetch('/signup', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(signupFormData),
         })
         .then(res => res.json())
-        .then(userObj => setUser(userObj))
+        .then(setUser)
+        // .then(userObj => setUser(userObj))
        }
 
        const [loginFormData,setLoginFormData] = useState({
@@ -78,14 +74,15 @@ useEffect(() => {
 
       const handleLogout = e => {
         console.log('clicking')
-        fetch(`/logout`, {
+        fetch('/logout', {
             method:'DELETE'
         })
         .then(res => {
-            if(res.ok) {
-                res.json().then(setUser(null))
+            if(res.status === 204) {
+              setUser(null)
             } else {
-                res.json().then(error => console.log)
+              res.json()
+              .then(error => console.log(error))
             }
         })
       }
@@ -93,16 +90,10 @@ useEffect(() => {
       const [transactionData, setTransactionData] = useState([])
 
       const addTransaction = newTransaction => {
-        setTransactionData(current => [...current, newTransaction])
+        setTransactionData(current => [newTransaction,...current ])
       }
-
-      const signupHandleChange = ({target: {name, value}}) => {
-        setSignupFormData(currentUser => ({
-          ...currentUser, [name]: value
-        }))
-        console.log('typing')
-      }
-
+      
+      
   return (
     <div>
         <UserContext.Provider value=
@@ -115,9 +106,7 @@ useEffect(() => {
             loginFormData,
             setLoginFormData,
             handleLogout, 
-            signupHandleChange,
-            setSignupFormData,
-            signupFormData, 
+       
             selectionModel,
             setSelectionModel, 
             addTransaction,

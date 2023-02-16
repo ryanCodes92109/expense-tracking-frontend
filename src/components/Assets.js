@@ -1,25 +1,28 @@
 import {UserContext} from 'react'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import AssetCard from './AssetCard'
+import AddAssetForm from './AddAssetForm'
 
 
-const Assets = () => {
-  // const {user, selectionModel, setSelectionModel} = useContext(UserContext)
+const Assets = ({assets, user}) => {
+  // const {user} = useContext(UserContext)
   
-  const {user} = useContext(UserContext)
-  const mappedAssets = user.map(asset => 
+  
+  const mappedAssets = assets.map(asset => 
   <AssetCard 
-    key={asset.assets.id}
-    investment= {asset.assets.investment_name}
-    amount={asset.assets.investment_amount}
-    user = {asset.assets.user_id}
+    key={asset.id}
+    investment= {asset.investment_name}
+    amount={asset.investment_amount}
+    user = {asset.user_id}
   />)
+  
 
   if(!user) {
     return <h1>Loading</h1>
   }
   return (
     <div className='listOfInvestments'>
+      <AddAssetForm assets={assets}/>
       {mappedAssets}
    
     </div>

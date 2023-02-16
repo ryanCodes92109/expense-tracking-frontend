@@ -45,7 +45,6 @@ function App() {
     // const addTransaction = newTransaction => {
     //   setTransactionData(current => [...current, newTransaction])
     // }
-   
   return (
     <div className="App">
         <NavBar />
@@ -57,15 +56,15 @@ function App() {
             <Route path='/transactions' element={ 
               <Transactions 
               transactionData={user.transactions}
+              setTransactionData={setTransactionData}
                 />
               }>
             </Route>  
               
               <Route path='/assets' element={
-                
                 <Assets 
-                debugger
                   assets={user.assets} 
+                  user={user}
                   />}>
               </Route >
         </Routes>
