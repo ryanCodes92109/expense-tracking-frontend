@@ -1,25 +1,23 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
+import { UserContext } from '../context/UserContext'
 
 
 const TransactionEditForm = ({transactionData, addTransaction}) => {
-
+  
   const initialFormValues ={
     vendor_name: '',
     amount_spent: ''
   }
-
   const [formData, setFormData] = useState(initialFormValues)
-      // console.log(formData)
 
 const handleChange = (e) => {
   const {name, value} = e.target
   setFormData({...formData, [name]: value})
-
 }
 
 const handleSubmit = e => {
   e.preventDefault()
-  fetch('http://localhost:4000/transactions', {
+  fetch('/transactions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -45,10 +43,10 @@ const handleSubmit = e => {
       {<form 
         className='transactionPatchForm' 
         onSubmit={handleSubmit}>
-        <label>Edit Transaction</label>
+        <label>Add New Transaction</label>
             <br/>
 
-          <div className = 'patchFormInput'>
+          <div className = 'addTransactionFormInput'>
             <label>Place of Purchase</label>
               <br/>
             <input 
@@ -57,12 +55,11 @@ const handleSubmit = e => {
               name='vendor_name'
               value={formData.vendor_name}
               onChange={handleChange}
-
               ></input>
               <br/>
           </div>
 
-          <div className = 'patchFormInput'>
+          <div className = 'addTransactionFormInput'>
             <label>Amount Spent</label>
             <br/>
             <input 

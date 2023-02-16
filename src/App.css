@@ -85,7 +85,7 @@ body {
   height: 35vh;
 }
 
-.patchFormInput {
+.addTransactionFormInput {
   border:5px solid blue;
 }
 
@@ -119,7 +119,7 @@ body {
 .signinForm {
   border: solid 5px black;
   width:15vw;
-  height:35vh;
+  height:40vh;
   background-color: lightblue;
   align-content:center;
   margin:auto;
