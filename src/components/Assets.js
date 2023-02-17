@@ -4,9 +4,9 @@ import AssetCard from './AssetCard'
 import AddAssetForm from './AddAssetForm'
 
 
-const Assets = ({assets, user}) => {
+const Assets = ({assets, user, created_assets}) => {
   // const {user} = useContext(UserContext)
-  
+  console.log(created_assets)
   
   const mappedAssets = assets.map(asset => 
   <AssetCard 
@@ -15,7 +15,16 @@ const Assets = ({assets, user}) => {
     amount={asset.investment_amount}
     user = {asset.user_id}
   />)
-  
+
+  const createdAssets= created_assets.map(manuallyCreatedAsset => {
+    return <AssetCard 
+    key={manuallyCreatedAsset.id}
+    investment= {manuallyCreatedAsset.investment_name}
+    amount={manuallyCreatedAsset.investment_amount}
+    user = {manuallyCreatedAsset.user_id}
+    />
+  })
+ console.log(createdAssets)
 
   if(!user) {
     return <h1>Loading</h1>
@@ -23,7 +32,9 @@ const Assets = ({assets, user}) => {
   return (
     <div className='listOfInvestments'>
       <AddAssetForm assets={assets}/>
+      {createdAssets}
       {mappedAssets}
+      
    
     </div>
   )

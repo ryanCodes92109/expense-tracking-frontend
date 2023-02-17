@@ -8,31 +8,12 @@ import Transactions from './components/Transactions';
 import Assets from './components/Assets'
 import Login from './components/Login'
 import Signup from './components/Signup';
-
-
+import Account from './components/Account';
 
 function App() {
   const {user} = useContext(UserContext)
   const [transactionData, setTransactionData] = useState([])
-  const [assets, setAssets] = useState([])
-
-  // console.log(transactionData)
-
-  // useEffect(() => {
-  //   fetch('/all-assets')
-  //   .then(res => res.json())
-  //   // .then(setAssets)
-  // }, [])
-  // console.log(assets)
-
-    // useEffect(() => {
-    //   const fetchData = () => {
-    //     fetch('/transactions')
-    //     .then(res => res.json())
-    //     .then(setTransactionData)
-    //   }
-    //   fetchData()
-    // },[])
+  // const [assets, setAssets] = useState([])
 
     const [toggleAuth, setToggleAuth] = useState(false)
 
@@ -41,16 +22,15 @@ function App() {
           toggleAuth && <Login setToggleAuth={setToggleAuth}/>) || (<Signup  setToggleAuth={setToggleAuth}/>
         )
       }
-
-    // const addTransaction = newTransaction => {
-    //   setTransactionData(current => [...current, newTransaction])
-    // }
+      // console.log(user)
   return (
     <div className="App">
         <NavBar />
           <Routes>
             <Route path='/' element={
-              <Home />
+              <Home 
+
+              />
               }>
             </Route>
             <Route path='/transactions' element={ 
@@ -64,9 +44,17 @@ function App() {
               <Route path='/assets' element={
                 <Assets 
                   assets={user.assets} 
+                  created_assets = {user.created_assets}
                   user={user}
                   />}>
               </Route >
+
+              <Route path='/login' element={
+                <Login setToggleAuth={setToggleAuth}/>
+              }> 
+
+              </Route>
+              
         </Routes>
     </div>
   );

@@ -5,10 +5,7 @@ const UserProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
 
-
-
   const [selectionModel,setSelectionModel] = useState()
-
 
 useEffect(() => {
     fetch("/authorized_user")
@@ -24,7 +21,7 @@ useEffect(() => {
         }
     })
 }, []);
-  console.log(user)
+  // console.log(user)
 
     //fetch for login and create and logout
     
@@ -80,6 +77,7 @@ useEffect(() => {
         .then(res => {
             if(res.status === 204) {
               setUser(null)
+              console.log(res)
             } else {
               res.json()
               .then(error => console.log(error))

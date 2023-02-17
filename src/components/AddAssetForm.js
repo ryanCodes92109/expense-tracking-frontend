@@ -2,24 +2,19 @@ import React, {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 
 const AddAssetForm = ({assets}) => {
-    console.log(assets)
+    // console.log(assets)
     const {setUser} =useContext(UserContext)
     const initialAssetFormValues =
     {
         investment_name: '',
         investment_amount: ''
       }
-      
-
 
     const [formAssetData, setFormAssetData] = useState(initialAssetFormValues)
-
-  
 
     const addAsset = newAsset => {
         setUser(currentUser => ({...currentUser, created_assets: [...currentUser.created_assets, newAsset]}) )
       }
-      
   
   const handleAssetChange = (e) => {
     const {name, value} = e.target

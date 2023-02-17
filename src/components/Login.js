@@ -13,50 +13,7 @@ const Home = ({setToggleAuth}) => {
   
 
 
-  // const showSignIn = e => {
-  //   setToggleSignIn(currentValue => !currentValue)
-  // }
-
-  // const loginSubmit = e => {
-  //   e.preventDefault()
-  //   fetch('/login', {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(user),
-  //   })
-  //   .then(res => res.json())
-  //   .then(userLoggedIn => setUser(userLoggedIn))
-    
-  //   console.log('submitting')
-  // }
-
-  // const createUserSubmit = e => {
-  //   const user = {
-  //     first_name: '',
-  //     last_name: '',
-  //     email: '',
-  //     password: ''
-  //   }
-  //   e.preventDefault()
-  //   fetch('/signup', {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(user),
-  //   })
-  //   .then(res => res.json())
-  //   .then(user => setUser(user))
-  //  }
-
-  // const handleChange = ({target: {name, value}}) => {
-  //   setFormData(currentUser => ({
-  //     ...currentUser, [name]: value
-  //   }))
-  //   console.log('typing')
-  // }
+ 
 
   return (
     <div className='credentialContainer'>

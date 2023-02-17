@@ -19,14 +19,13 @@ const Signup = ({setToggleAuth}) => {
   }
 
 const {  createUserSubmit  } = useContext(UserContext)
-console.log(signupFormData)
+// console.log(signupFormData)
 
 
   return (
     <div>
       <form 
         onSubmit={e => createUserSubmit(e,signupFormData)}
-        // onSubmit={(e) => createUserSubmit(e, signupFormData)}
         className= 'signUpForm'>
         <label>First Name</label>
           <br/>
@@ -67,10 +66,7 @@ console.log(signupFormData)
           type = 'submit'
           
           >Create an Account</button>
-          <br/>
-          <br/>
-    
-          <br/>
+      
           <Link onClick={() => setToggleAuth(currentVal => !currentVal)}>Have an account? Sign in here. </Link>
       </form>
       

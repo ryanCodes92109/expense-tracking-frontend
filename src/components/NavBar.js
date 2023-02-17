@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
+import Account from './Account'
 
 const NavBar = () => {
   const {handleLogout} =useContext(UserContext)
@@ -21,11 +22,9 @@ const NavBar = () => {
           <Link to='/assets'>
             <li className='navButton'>Assets</li>
           </Link>
+
           <Link to='/logout'>
-          <button 
-            className='navButton'
-            onClick={handleLogout}
-            >Log Out</button>
+            <li onClick={handleLogout} className='navButton'>Log Out</li>
           </Link>
      
         </ul>

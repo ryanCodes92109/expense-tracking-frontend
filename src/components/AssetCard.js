@@ -1,6 +1,8 @@
 import React from 'react'
 
 const AssetCard = ({ amount, investment, user}) => {
+  // console.log(user)
+
   return (
     
         <div className = 'investmentList'>

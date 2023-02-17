@@ -6,7 +6,7 @@ import TransactionEditForm from './TransactionEditForm';
 const Transactions = ({transactionData, setTransactionData}) => {
 
   const {user} = useContext(UserContext)
-  console.log(user.assets)
+  // console.log(user.assets)
   
   const editTransaction = e => {
   

@@ -32,7 +32,7 @@ body {
 
 .navBar {
   width: 86vw;
-  
+  margin:auto;
   list-style:none;
   display:flex;
   justify-content:flex-end;
@@ -46,6 +46,7 @@ body {
   text-align: center;
   margin-top:auto;
   margin-bottom: auto;
+  background-color:grey;
 }
 
 .navButton:hover {
@@ -134,3 +135,23 @@ body {
   margin:auto;
 }
 
+.userInfoBoxParent {
+  margin:auto;
+  
+}
+
+.userInfoBox {
+  display:relative ;
+  left: 50%;
+  border: solid 5px black;
+  width: 15vw;
+  height:25vh;
+  margin:auto;
+  background-color:lightblue;
+
+}
+
+.accountInfoPatch {
+  width:13vw;
+
+}
