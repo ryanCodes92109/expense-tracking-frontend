@@ -1,17 +1,18 @@
 html {
   background-color: black;
-  display:fixed;
+  display:absolute;
+
 }
 
 body {
   background-color:grey;
-  
+  display:fixed;
   margin-left: 7vw;
   margin-right:7vw;
   margin-top: 5vh;
   margin-bottom:5vh;
   height:100vh;
-  overflow:scroll;
+  overflow:none;
 }
 
 .appTitle {
@@ -64,16 +65,13 @@ body {
 .transactions {
   background-color: white;
   border:solid 3px black;
-  height: 75vh;
-  width:65vw;
+  width: 75vw;
+  height:50vh;
   text-align:center;
   margin:auto;
-  margin-top: 5vh;
-}
+  /* margin-top: 5vh; */
 
-.transactionLabel {
-  font-size: 3rem;
-
+  overflow:scroll;
 }
 
 .deleteBtn {
@@ -81,32 +79,76 @@ body {
 }
 
 .transactionPatchForm {
-  border: 5px solid black;
-  width:15vw;
-  height: 35vh;
+  width: 75vw;  
+  height:10vh;
+  display:flex;
+  background-color: lightblue;
+  text-align:center;
+  align-items: center;
+  margin:auto;
 }
 
-.addTransactionFormInput {
-  border:5px solid blue;
+.newTransactionFlexContainer {
+
 }
+
+.assetContainer {
+  display:flex;
+  /* position:absolute; */
+  border: 5px solid black;
+  width: 75vw;
+  height:70vh;
+  background-color:lightblue;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow:scroll;
+}
+
+.AssetPostForm {
+  /* border: 5px solid black; */
+  width: 75vw;  
+  height:10vh;
+  display:flex;
+  background-color: lightblue;
+  
+  
+}
+.assetInput, .addAssetBtn, .newTransactionButton, .newTransactionInput {
+  height: 5vh;
+  width:10vw;
+  margin-top:auto;
+  margin-bottom: auto;
+  position:relative;
+  left:.5vw;
+}
+
 
 .listOfInvestments {
   display:flex;
   justify-content: space-around;
-  align-content: space-around;
+ 
   flex-wrap: wrap;
 }
 
 .investmentList {
-  overflow:scroll;
+  /* overflow:scroll; */
+  display:flex;
+  background-color: lightblue;
+  justify-content: space-between;
+  margin:auto;
+  margin-top:5vh;
+
 }
 
 .investmentCard {
-  border: 5px solid yellow;
   height:25vh;
   width:15vw;
-  color:white;
   margin:auto;
+  color:black;
+  border: 5px solid black;
+  text-align:center;
+  justify-content: space-between;
+  box-shadow:  1em 1em black;
 }
 
 .credentialContainer {

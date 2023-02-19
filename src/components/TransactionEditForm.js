@@ -2,27 +2,30 @@ import {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 
 
-const TransactionEditForm = ({transactionData, setTransactionData}) => {
+const TransactionEditForm = () => {
   const {setUser} = useContext(UserContext)
+  const [showNewTransactionForm, setShowNewTransactionForm] = useState(true)
+
+  const toggleNewTransactionForm = e => {
+    setShowNewTransactionForm(currentValue => !currentValue)
+  }
   
   const initialTransactionFormValues ={
     vendor_name: '',
     amount_spent: ''
   }
-  const [formTransactionData, setFormTransactionData] = useState(initialTransactionFormValues)
 
-  
+  const [formTransactionData, setFormTransactionData] = useState(initialTransactionFormValues)
 
 const handleTransactionChange = (e) => {
   const {name, value} = e.target
   setFormTransactionData({ ...formTransactionData,[name]: value })
 }
+
 const addTransaction = newTransaction => {
   setUser(currentUser => ({...currentUser, transactions: [...currentUser.transactions, newTransaction]}) )
 }
-// const addAsset = newAsset => {
-//   setUser(currentUser => ({...currentUser, created_assets: [...currentUser.created_assets, newAsset]}) )
-// }
+
 const handleTransactionSubmit = e => {
   e.preventDefault()
   fetch('/transactions', {
@@ -49,41 +52,41 @@ const handleTransactionSubmit = e => {
     
   return (
 
-    <div>
-      {<form 
+    <>
+      
+      <form 
         className='transactionPatchForm' 
         onSubmit={handleTransactionSubmit}>
-        <label>Add New Transaction</label>
-            <br/>
+        {/* <label className= 'addNewTransactionLabel'>Add New Transaction</label>
+            <br/> */}
 
           <div className = 'addTransactionFormInput'>
-            <label>Place of Purchase</label>
-              <br/>
+         
             <input 
+              className='newTransactionInput'
               type='text'
-              placeholder='Store Name'
+              placeholder='Enter New Transaction Here'
               name='vendor_name'
               value={formTransactionData.vendor_name}
               onChange={handleTransactionChange}
               ></input>
-              <br/>
           </div>
 
           <div className = 'addTransactionFormInput'>
-            <label>Amount Spent</label>
-            <br/>
             <input 
+              className='newTransactionInput'
               type='text'
-              placeholder='Enter Cost'
+              placeholder='Amount Spent'
               name='amount_spent'
               value={formTransactionData.amount_spent}
               onChange={handleTransactionChange}
               ></input>
-            <br/>
           </div>
-        <button type='submit' >Submit Change</button>
-      </form>}
-    </div>
+       
+        <button className = 'newTransactionButton' type='submit' >Add Transaction</button>
+      </form> 
+
+    </>
   )
 }
 

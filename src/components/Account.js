@@ -4,13 +4,21 @@ import Transactions from "./Transactions"
 import {useState, useContext} from 'react';
 import { UserContext } from '../context/UserContext';
 import Assets from "./Assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Account = () => {
-
+// const navigate = useNavigate()
 const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange, setUser,setSignupFormData} = useContext(UserContext)
 
   const [toggleAuth, setToggleAuth] = useState(false)
+
+  const initialPatchFormValues = {
+  
+      first_name: "",
+      last_name: "",
+      email: ""
+    }
+  
 
   const [patchFormValues, setPatchFormValues] = useState({
     first_name: user.first_name,
@@ -21,30 +29,21 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
     const userPatch = (e) => {
       e.preventDefault()
       console.log('submit')
-      const newValue =  {
-        first_name: e.target.value,
-        last_name:e.target.value,
-        email:e.target.value
-      }
-      console.log("submit")
+     
       fetch(`/users/${user.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newValue),
+        body: JSON.stringify(patchFormValues),
       })
-      .then(res => res.json())
-      .then(setUser(newValue))
+      .then(res => { 
+        console.log(res.json())
+      })
+      .then(setUser(patchFormValues))
+      setPatchFormValues(initialPatchFormValues)
       // .then(userObj => setUser(userObj))
      }
-
-    //  const patchHandleChange = ({target: {name, value}}) => {
-    //   setUser(currentUser => (
-    //     { ...currentUser, [name]: value }
-    //     ))
-    //   console.log('typing')
-    // }
 
     const patchHandleChange = (e) => {
       const { name, value } = e.target;
@@ -57,8 +56,8 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
         method: 'DELETE'
       })
       .then(res => {
-        if(!user) {
-         setUser(null)
+        if(res.status === 204) {
+          setUser(null)
          
          console.log(res)
         } else {
@@ -67,6 +66,7 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
       })
     }
     console.log(user)
+    
   if (!user) {
     return (
       toggleAuth && <Login setToggleAuth={setToggleAuth}/>) || (<Signup  setToggleAuth={setToggleAuth}/>

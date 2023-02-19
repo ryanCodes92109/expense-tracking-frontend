@@ -1,9 +1,11 @@
 import React, {useContext, useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 
 const Signup = ({setToggleAuth}) => {
-
+  const navigate = useNavigate()
+  
+  const {setUser} =useContext(UserContext)
   const [signupFormData,setSignupFormData] = useState({
     first_name: '',
     last_name: '' ,
@@ -18,8 +20,30 @@ const Signup = ({setToggleAuth}) => {
     console.log('typing')
   }
 
-const {  createUserSubmit  } = useContext(UserContext)
-// console.log(signupFormData)
+  const createUserSubmit = (e, signupFormData) => {
+    e.preventDefault()
+    fetch('/signup', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(signupFormData),
+    })
+    .then(res => {
+      if (res.status===201){
+
+      res.json()
+
+    .then(newUserObj => {
+      setUser(newUserObj)
+      navigate('/transactions')
+          }
+        )
+      }
+    }
+  )
+    // .then(userObj => setUser(userObj))
+   }
 
 
   return (
@@ -64,7 +88,6 @@ const {  createUserSubmit  } = useContext(UserContext)
 
         <button 
           type = 'submit'
-          
           >Create an Account</button>
       
           <Link onClick={() => setToggleAuth(currentVal => !currentVal)}>Have an account? Sign in here. </Link>

@@ -32,9 +32,10 @@ const Assets = ({assets, user, created_assets}) => {
   return (
     <div className='listOfInvestments'>
       <AddAssetForm assets={assets}/>
-      {createdAssets}
-      {mappedAssets}
-      
+      <div className='assetContainer'>
+        {createdAssets}
+        {mappedAssets}
+      </div>
    
     </div>
   )

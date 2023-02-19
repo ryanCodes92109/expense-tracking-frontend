@@ -1,9 +1,11 @@
 import React, {createContext, useState, useEffect} from 'react'
+
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
+    
 
   const [selectionModel,setSelectionModel] = useState()
 
@@ -25,35 +27,47 @@ useEffect(() => {
 
     //fetch for login and create and logout
     
-    const loginSubmit = (e,loginFormData) => {
-        e.preventDefault()
-        fetch('/login', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(loginFormData),
-        })
-        .then(res => res.json())
-        .then(userObj => setUser(userObj))
+    // const loginSubmit = (e,loginFormData) => {
+    //     e.preventDefault()
+    //     fetch('/login', {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(loginFormData),
+    //     })
+    //     .then(res => {
+    //       res.json()
+    //       .then(userObj => {
+    //         setUser(userObj)
+    //         navigate('/transactions')
+    //         })
+    //     }
+        
+    //     )
+        
         
     
-        console.log('submitting')
-      }
+    //     console.log('submitting')
+    //   }
     
-      const createUserSubmit = (e, signupFormData) => {
-        e.preventDefault()
-        fetch('/signup', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(signupFormData),
-        })
-        .then(res => res.json())
-        .then(setUser)
-        // .then(userObj => setUser(userObj))
-       }
+      // const createUserSubmit = (e, signupFormData) => {
+      //   e.preventDefault()
+      //   fetch('/signup', {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(signupFormData),
+      //   })
+      //   .then(res => {
+      //     res.json()})
+      //   .then(
+      //     setUser
+          
+      //     )
+      //   // .then(userObj => setUser(userObj))
+      //  }
 
        const [loginFormData,setLoginFormData] = useState({
         first_name: '',
@@ -98,8 +112,6 @@ useEffect(() => {
         {   {
             user, 
             setUser, 
-            loginSubmit, 
-            createUserSubmit,
             handleChange,
             loginFormData,
             setLoginFormData,

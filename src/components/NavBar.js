@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <>        
         <div className='navContainer'>
-        <p className='appTitle'>ENTER NAME O' APP</p>
+        <p className='appTitle'>WHERE MY MONEY!</p>
         <ul className='navBar'>
           <Link to='/'>
             <li className='navButton'>Home</li>

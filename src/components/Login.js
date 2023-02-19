@@ -1,17 +1,45 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { UserContext } from '../context/UserContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = ({setToggleAuth}) => {
-  // console.log(user)
+  const navigate = useNavigate()
+   // console.log(user)
   const { 
-    loginSubmit, 
     handleChange,
     loginFormData,
-    setLoginFormData
+    setLoginFormData,
+    setUser,
         } = useContext(UserContext)
   
-
+        const loginSubmit = (e,loginFormData) => {
+          e.preventDefault()
+          fetch('/login', {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(loginFormData),
+          })
+          .then(res => {
+            if (res.status === 200) {
+              
+              res.json()
+          
+            .then(userObj => 
+              {
+                setUser(userObj)
+                navigate('/transactions')
+              }
+            )
+          }
+        }
+      )
+          
+          
+      
+          console.log('submitting')
+        }
 
  
 
@@ -42,8 +70,10 @@ const Home = ({setToggleAuth}) => {
           
           <br/>
         <button 
-          type='submit'
-          >Sign In</button>
+          type='submit'>
+            Sign In
+          </button>
+
           <br/>
           <br/>
           <Link onClick={() => setToggleAuth(currentVal => !currentVal)}>Don't have an account? Sign up here.</Link>

@@ -36,14 +36,12 @@ const Transactions = ({transactionData, setTransactionData}) => {
         />
         <div className='transactions'>
           <label className='transactionLabel'>Transactions</label>
-
         <DataGrid
           checkboxSelection
           columns={columns}
           rows={user.transactions}
 
             />
-
         </div>
     </div>
   )

@@ -52,8 +52,13 @@ function App() {
               <Route path='/login' element={
                 <Login setToggleAuth={setToggleAuth}/>
               }> 
-
               </Route>
+
+              <Route path='/logout' element={
+                <Signup />
+              }/>
+
+            
               
         </Routes>
     </div>

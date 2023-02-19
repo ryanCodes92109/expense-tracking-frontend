@@ -3,9 +3,9 @@ import { UserContext } from '../context/UserContext'
 
 const AddAssetForm = ({assets}) => {
     // console.log(assets)
+    const [toggleAddAssetForm, setToggleAddAssetForm] = useState(true)
     const {setUser} =useContext(UserContext)
-    const initialAssetFormValues =
-    {
+    const initialAssetFormValues = {
         investment_name: '',
         investment_amount: ''
       }
@@ -15,6 +15,11 @@ const AddAssetForm = ({assets}) => {
     const addAsset = newAsset => {
         setUser(currentUser => ({...currentUser, created_assets: [...currentUser.created_assets, newAsset]}) )
       }
+
+  const toggleNewAssetForm = e => {
+    console.log('click')
+    setToggleAddAssetForm(currentValue => !currentValue)
+  }
   
   const handleAssetChange = (e) => {
     const {name, value} = e.target
@@ -39,48 +44,48 @@ const AddAssetForm = ({assets}) => {
         res.json()
         .then(addAsset)
       }
-  
+      
     })
     
   }
     
 
   return (
-    <div>
-      <span>adding assets</span>
+    <div className='addAssetsForm'>
       <form 
         className='AssetPostForm' 
-        onSubmit={handleAssetSubmit}>
-        <label>Add New Transaction</label>
-            <br/>
-
-          <div className = 'addAssetFormInput'>
-            <label>Asset Name</label>
-              <br/>
+        onSubmit={handleAssetSubmit}
+      >
             <input 
+            className='assetInput'
               type='text'
-              placeholder='Store Name'
+              placeholder='Name of Investment'
               name='investment_name'
               value={formAssetData.investment_name}
               onChange={handleAssetChange}
               ></input>
               <br/>
-          </div>
 
-          <div className = 'addAssetFormInput'>
-            <label>Amount Spent</label>
-            <br/>
             <input 
+            className='assetInput'
               type='decimal'
-              placeholder='Enter Cost'
+              placeholder='Amount Invested'
               name='investment_amount'
               value={formAssetData.investment_amount}
               onChange={handleAssetChange}
               ></input>
             <br/>
-          </div>
-        <button type='submit' >Submit Change</button>
+
+        <button 
+          className='addAssetBtn' 
+          type='submit' >Add New Investment</button>
+        
       </form>
+
+      {/* <button 
+          className='addAssetBtn'
+          onClick = {toggleNewAssetForm}
+          type='text'>Hide </button> */}
     </div>
   )
 }
