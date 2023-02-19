@@ -7,7 +7,8 @@ import AddAssetForm from './AddAssetForm'
 const Assets = ({assets, user, created_assets}) => {
   // const {user} = useContext(UserContext)
   console.log(created_assets)
-  
+  console.log(user)
+
   const mappedAssets = assets.map(asset => 
   <AssetCard 
     key={asset.id}

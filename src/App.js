@@ -9,8 +9,8 @@ import Home from './components/Home';
 function App() {
   const [transactionData, setTransactionData] = useState([])
   const [assets, setAssets] = useState([])
-  
-  // console.log(transactionData)
+
+  console.log(transactionData)
     // useEffect(() => {
     //   const fetchData = () => {
     //     fetch('http://127.0.0.1:4000/transactions')
@@ -41,7 +41,7 @@ function App() {
               user_id={transactionData.user_id} 
             />}>
           </Route>
-            <Route path='/Assets' element={
+            <Route path='/all-assets' element={
               <Assets 
                 assets={assets} 
                 />}>

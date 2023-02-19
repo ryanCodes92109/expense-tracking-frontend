@@ -15,7 +15,6 @@ const NavBar = () => {
             <li className='navButton'>Home</li>
           </Link>
 
-          {/* ternary showing assets and transactions if user logged in */}
           <Link to='/transactions'>
             <li className='navButton'>Transactions</li>
           </Link>

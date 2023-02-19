@@ -21,9 +21,9 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
   
 
   const [patchFormValues, setPatchFormValues] = useState({
-    // first_name: user.first_name,
-    // last_name: user.last_name,
-    // email: user.email,
+    first_name: user.first_name,
+    last_name: user.last_name,
+    email: user.email,
   });
   
     const userPatch = (e) => {
