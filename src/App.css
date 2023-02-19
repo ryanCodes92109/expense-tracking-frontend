@@ -92,8 +92,8 @@ body {
 
 .assetContainer {
   display:flex;
-  position:absolute;
-  top:55vh;
+  /* position:absolute;
+  top:55vh; */
   border: 5px solid black;
   width: 75vw;
   height:50vh;
@@ -103,11 +103,22 @@ body {
   overflow:scroll;
 }
 
-.addAssetsForm {
-  border: 5px black solid;
+.AssetPostForm {
+  display:flex;
+  position:relative;
+  /* border: 5px black solid; */
   background-color: lightblue;
-  width:25vw;
-  
+  width: 75vw;
+  height:15vh;
+  margin:auto;
+  align-items: center;
+}
+
+.assetInput, .assetSubmitButton {
+  position:relative;
+  left:.5vw;
+  height:5vh;
+  width:10vw;
 }
 
 .addNewTransactionLabel {
@@ -116,7 +127,6 @@ body {
 
 .newTransactionButton {
   height:5vh;
-
 }
 
 .listOfInvestments {

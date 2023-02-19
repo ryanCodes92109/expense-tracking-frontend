@@ -50,35 +50,32 @@ const AddAssetForm = ({assets}) => {
       <form 
         className='AssetPostForm' 
         onSubmit={handleAssetSubmit}>
-        <label>Add New Transaction</label>
-            <br/>
 
-          <div className = 'addAssetFormInput'>
-            <label>Asset Name</label>
-              <br/>
+      <div className = 'addAssetFormInput'>
+
             <input 
+              className='assetInput'
               type='text'
-              placeholder='Store Name'
+              placeholder='Name of Investment'
               name='investment_name'
               value={formAssetData.investment_name}
               onChange={handleAssetChange}
               ></input>
-              <br/>
           </div>
 
           <div className = 'addAssetFormInput'>
-            <label>Amount Spent</label>
-            <br/>
             <input 
+              className='assetInput'
               type='decimal'
               placeholder='Enter Cost'
               name='investment_amount'
               value={formAssetData.investment_amount}
               onChange={handleAssetChange}
               ></input>
-            <br/>
           </div>
-        <button type='submit' >Submit Change</button>
+        <button 
+          className='assetSubmitButton'
+          type='submit' >Submit Change</button>
       </form>
     </div>
   )
