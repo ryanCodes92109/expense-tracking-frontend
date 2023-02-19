@@ -127,7 +127,7 @@ body {
 }
 
 .investmentList {
-  /* overflow:scroll; */
+  overflow:scroll;
   background-color: lightblue;
   justify-content: space-around;
 
@@ -187,3 +187,4 @@ body {
   width:13vw;
 
 }
+

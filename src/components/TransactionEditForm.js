@@ -3,7 +3,7 @@ import { UserContext } from '../context/UserContext'
 
 
 const TransactionEditForm = () => {
-  const {setUser} = useContext(UserContext)
+  const {user, setUser} = useContext(UserContext)
   const [showNewTransactionForm, setShowNewTransactionForm] = useState(false)
 
   const toggleNewTransactionForm = e => {
@@ -66,7 +66,7 @@ const handleTransactionSubmit = e => {
               type='text'
               placeholder='Place of Purchase'
               name='vendor_name'
-              value={formTransactionData.vendor_name}
+              value={user.vendor_name}
               onChange={handleTransactionChange}
               ></input>
           </div>
@@ -76,7 +76,7 @@ const handleTransactionSubmit = e => {
               type='text'
               placeholder='Amount Spent'
               name='amount_spent'
-              value={formTransactionData.amount_spent}
+              value={user.amount_spent}
               onChange={handleTransactionChange}
               ></input>
           </div>
