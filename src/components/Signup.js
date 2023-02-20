@@ -47,7 +47,7 @@ const Signup = ({setToggleAuth}) => {
 
 
   return (
-    <div>
+    <div className='credentialContainer'>
       <form 
         onSubmit={e => createUserSubmit(e,signupFormData)}
         className= 'signUpForm'>
@@ -89,10 +89,11 @@ const Signup = ({setToggleAuth}) => {
         <button 
           type = 'submit'
           >Create an Account</button>
-      
-          <Link onClick={() => setToggleAuth(currentVal => !currentVal)}>Have an account? Sign in here. </Link>
+          <br/>
+          <Link 
+            className='toggleSignInLink'
+            onClick={() => setToggleAuth(currentVal => !currentVal)}>Have an account? Sign in here. </Link>
       </form>
-      
     </div>
   )
 }

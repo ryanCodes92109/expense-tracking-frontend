@@ -5,10 +5,10 @@ import Assets from './Assets'
 
 const Home = () => {
   return (
-    <div className ='userInfoBoxParent'>
+    <>
       <Account />
 
-    </div>
+    </>
   )
 }
 

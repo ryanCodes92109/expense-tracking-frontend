@@ -73,7 +73,7 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
     )
   }
   return (
-    <div className ='userInfoBoxParent'>
+    
       <div className ='userInfoBox'>
       {`${user.first_name} ${user.last_name}`}
         <br/>
@@ -113,7 +113,7 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
             
       {/* <Transactions /> */}
       </div>
-    </div>
+ 
   )
 }
   

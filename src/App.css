@@ -156,10 +156,12 @@ body {
 
 .credentialContainer {
   display:flex;
-  justify-content: center; 
-  align-items: center;
-  align-content:center; 
+  position: relative;
+  top:20vh;
   margin:auto;
+  width:15vw;
+  height:40vh;
+  background-color: lightblue;
 }
 
 .signinForm {
@@ -167,25 +169,32 @@ body {
   width:15vw;
   height:40vh;
   background-color: lightblue;
-  align-content:center;
   margin:auto;
+  box-shadow:  1em 1em black;
+
 }
 
 .signUpForm {
   border: solid 5px black;
   width:15vw;
-  height:40vh;
+  height:50vh;
   background-color: lightblue;
   align-content:center;
   margin:auto;
+  box-shadow:  1em 1em black;
+}
+
+.toggleSignInLink {
+  position:relative;
+  top:2vh;
 }
 
 .userInfoBox {
-  display:relative ;
-  left: 50%;
+  position:relative;
+  top:15vh;
   border: solid 5px black;
   width: 15vw;
-  height:50vh;
+  height:35vh;
   margin:auto;
   background-color:lightblue;
 
