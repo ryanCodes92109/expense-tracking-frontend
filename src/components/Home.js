@@ -5,7 +5,7 @@ import Assets from './Assets'
 
 const Home = () => {
   return (
-    <div>
+    <div className ='userInfoBoxParent'>
       <Account />
 
     </div>

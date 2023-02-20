@@ -1,11 +1,11 @@
 html {
   background-color: black;
   display:fixed;
+
 }
 
 body {
   background-color:grey;
-  
   margin-left: 7vw;
   margin-right:7vw;
   margin-top: 5vh;
@@ -28,6 +28,7 @@ body {
   background-color: lightblue;
   height:14vh;
   display:flex;
+  
 }
 
 .navBar {
@@ -37,6 +38,7 @@ body {
   display:flex;
   justify-content:flex-end;
   align-items:top;
+  
 }
 
 .navButton {
@@ -47,6 +49,7 @@ body {
   margin-top:auto;
   margin-bottom: auto;
   background-color:grey;
+
 }
 
 .navButton:hover {
@@ -61,40 +64,27 @@ body {
   background-color: white;
   display:flex;
 }
+
 .transactions {
   background-color: white;
-  border:solid 3px black;
-  height: 75vh;
+  /* border:solid 3px black; */
+  box-shadow:  .5em 1em black;
+  height: 60vh;
   width:65vw;
   text-align:center;
   margin:auto;
-  margin-top: 5vh;
+  /* margin-top: 5vh; */
 }
 
 .deleteBtn {
   border: solid 5px black;
 }
 
-.transactionPatchForm {
-  display:flex;
-  flex-direction:column;
-  justify-content: space-between;
-  border: 5px solid red;
-  width:10vw;
-  height: 15vh;
-  background-color: lightblue;
-}
-
-.addTransactionFormInput {
-  height:5vh;
-  /* margin:auto; */
-}
-
 .assetContainer {
   display:flex;
   /* position:absolute;
   top:55vh; */
-  border: 5px solid black;
+  /* border: 5px solid black; */
   width: 75vw;
   height:50vh;
   background-color:lightblue;
@@ -103,7 +93,7 @@ body {
   overflow:scroll;
 }
 
-.AssetPostForm {
+.AssetPostForm, .transactionPatchForm {
   display:flex;
   position:relative;
   /* border: 5px black solid; */
@@ -114,19 +104,38 @@ body {
   align-items: center;
 }
 
-.assetInput, .assetSubmitButton {
+.transactionLabel {
+  font-size: 1.5rem;
+}
+
+/* .transactionPatchForm {
+  display:flex;
+  position:relative;
+  /* border: 5px black solid; */
+  /* background-color: lightblue;
+  width: 75vw;
+  height:15vh;
+  margin:auto;
+  align-items: center;
+} */ 
+
+
+
+.postInput {
   position:relative;
   left:.5vw;
   height:5vh;
   width:10vw;
+  text-align:center;
 }
 
-.addNewTransactionLabel {
-  font-size: 1.5rem;
-}
-
-.newTransactionButton {
+.submitButton {
+  position:relative;
+  left:.5vw;
   height:5vh;
+  width:8vw;
+  text-align:center;
+
 }
 
 .listOfInvestments {
@@ -136,19 +145,13 @@ body {
   flex-wrap: wrap;
 }
 
-.investmentList {
-  overflow:scroll;
-  background-color: lightblue;
-  justify-content: space-around;
-
-}
-
 .investmentCard {
   height:25vh;
   width:15vw;
-  margin:auto;
   color:black;
   border: 5px solid black;
+  box-shadow:  1em 1em black;
+  margin-top: 5vh;
 }
 
 .credentialContainer {
@@ -177,17 +180,12 @@ body {
   margin:auto;
 }
 
-.userInfoBoxParent {
-  margin:auto;
-  
-}
-
 .userInfoBox {
   display:relative ;
   left: 50%;
   border: solid 5px black;
   width: 15vw;
-  height:25vh;
+  height:50vh;
   margin:auto;
   background-color:lightblue;
 

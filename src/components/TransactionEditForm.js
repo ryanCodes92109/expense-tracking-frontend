@@ -52,9 +52,9 @@ const handleTransactionSubmit = e => {
     
   return (
 
-    <div className='newTransactionFlexContainer'>
+    <>
       
-      {showNewTransactionForm ? <form 
+      <form 
         className='transactionPatchForm' 
         onSubmit={handleTransactionSubmit}>
         {/* <label className= 'addNewTransactionLabel'>Add New Transaction</label>
@@ -63,6 +63,7 @@ const handleTransactionSubmit = e => {
           <div className = 'addTransactionFormInput'>
          
             <input 
+              className='postInput'
               type='text'
               placeholder='Place of Purchase'
               name='vendor_name'
@@ -73,6 +74,7 @@ const handleTransactionSubmit = e => {
 
           <div className = 'addTransactionFormInput'>
             <input 
+              className='postInput'
               type='text'
               placeholder='Amount Spent'
               name='amount_spent'
@@ -81,13 +83,13 @@ const handleTransactionSubmit = e => {
               ></input>
           </div>
        
-        <button className ='newTransactionButton' type='submit' >Add Transaction</button>
-        <button onClick={toggleNewTransactionForm}>Hide</button>
+        <button 
+          className ='submitButton' 
+          type='submit' 
+          >Add Transaction</button>
       </form> 
-      : <button onClick={toggleNewTransactionForm}>Add Transaction</button> 
-      
-      }
-    </div>
+    
+    </>
   )
 }
 

@@ -22,7 +22,8 @@ const Transactions = ({transactionData, setTransactionData}) => {
     const columns = [
     {field:"id", headerName:'Id', editable: true},
     {field:"vendor_name", headerName:'Place of Purchase',editable: true, width:300},
-    {field:"amount_spent", headerName:'Cost',editable: true, width:300}    
+    {field:"amount_spent", headerName:'Cost',editable: true, width:300} ,
+    {field: 'user_id', headerName: "User", editable: true}   
     ]
     if(!user) {
       return <h1>Loading</h1>
@@ -38,6 +39,7 @@ const Transactions = ({transactionData, setTransactionData}) => {
           <label className='transactionLabel'>Transactions</label>
 
         <DataGrid
+          className='transactionGrid'
           checkboxSelection
           columns={columns}
           rows={user.transactions}
