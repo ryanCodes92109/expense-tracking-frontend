@@ -7,9 +7,9 @@ const AssetCard = ({ amount, investment, user}) => {
     
         <div className = 'investmentList'>
             <div className = 'investmentCard'>
-                <div className='userWhoInvested'>{user}</div> <br/>
-                <div className='investmentName'>{investment}</div> <br/>
-                <div className='investmentAmount'>$ {amount}</div> <br/>
+                {/* <div className='userWhoInvested'>{user}</div> <br/> */}
+                <div className='investmentName'>Name: {investment}</div> <br/>
+                <div className='investmentAmount'> Amount: ${amount}</div> <br/>
             </div>
         </div>
 

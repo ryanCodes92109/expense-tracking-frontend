@@ -55,7 +55,7 @@ const AddAssetForm = ({assets}) => {
             <input 
               className='postInput'
               type='text'
-              placeholder='Name of Investment'
+              placeholder='Enter Name of Investment'
               name='investment_name'
               value={assets.investment_name}
               onChange={handleAssetChange}
@@ -66,7 +66,7 @@ const AddAssetForm = ({assets}) => {
             <input 
               className='postInput'
               type='decimal'
-              placeholder='Enter Cost'
+              placeholder='Enter Amount of Investment'
               name='investment_amount'
               value={assets.investment_amount}
               onChange={handleAssetChange}
@@ -74,7 +74,7 @@ const AddAssetForm = ({assets}) => {
           </div>
         <button 
           className='submitButton'
-          type='submit' >Submit Change</button>
+          type='submit' >Add Investment</button>
       </form>
     </div>
   )

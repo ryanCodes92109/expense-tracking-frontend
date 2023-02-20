@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 import Account from './Account'
+// import moneySymbol from '../moneySymbol.png'
 
 const NavBar = () => {
   const {handleLogout} = useContext(UserContext)
@@ -9,17 +10,20 @@ const NavBar = () => {
   return (
     <>        
         <div className='navContainer'>
-        <p className='appTitle'>ENTER NAME O' APP</p>
+        <img className="money-icon" src={process.env.PUBLIC_URL+"/moneySymbol.png"} alt="logo"/>
+        <p className='appTitle'>WHERE MA' MONEY</p>
         <ul className='navBar'>
           <Link to='/'>
-            <li className='navButton'>Home</li>
+            <div className ='navButtonParent'>
+              <li className='navButton'>Home</li>
+            </div>
           </Link>
 
           <Link to='/transactions'>
             <li className='navButton'>Transactions</li>
           </Link>
           <Link to='/assets'>
-            <li className='navButton'>Assets</li>
+            <li className='navButton'>Investments</li>
           </Link>
 
           <Link to='/logout'>

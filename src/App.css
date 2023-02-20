@@ -1,11 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+  }
+
 html {
   background-color: black;
   display:fixed;
-
 }
 
 body {
-  background-color:grey;
+  background-color:rgb(195, 194, 194);
   margin-left: 7vw;
   margin-right:7vw;
   margin-top: 5vh;
@@ -15,7 +20,7 @@ body {
 }
 
 .appTitle {
-  background-color: lightblue;
+  background-color: rgb(194, 233, 246);
   width:86vw;
   margin:auto;
   margin-left:3vw;
@@ -25,7 +30,7 @@ body {
 }
 
 .navContainer {
-  background-color: lightblue;
+  background-color: rgb(194, 233, 246);
   height:14vh;
   display:flex;
   
@@ -42,14 +47,16 @@ body {
 }
 
 .navButton {
-  border:solid 3px black;
-  width:7vw;
-  height:3vh;
+  /* border:solid .1vw black; */
+  width:5vw;
+  height:6vh;
   text-align: center;
-  margin-top:auto;
-  margin-bottom: auto;
-  background-color:grey;
-
+  margin:.1vw;
+  background-color: rgb(194, 233, 246);
+  position:relative;
+  /* background-color:rgb(195, 194, 194); */
+  color:black;
+  padding:1vh;
 }
 
 .navButton:hover {
@@ -58,6 +65,7 @@ body {
 }
 .navButton:visited {
   text-decoration: none;
+  color:black;
 }
 
 .transactionContainer {
@@ -73,7 +81,7 @@ body {
   width:65vw;
   text-align:center;
   margin:auto;
-  /* margin-top: 5vh; */
+  margin-top: 2.5vh;
 }
 
 .deleteBtn {
@@ -83,14 +91,15 @@ body {
 .assetContainer {
   display:flex;
   /* position:absolute;
-  top:55vh; */
+  top:vh; */
   /* border: 5px solid black; */
   width: 75vw;
   height:50vh;
-  background-color:lightblue;
+  background-color: rgb(194, 233, 246);
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
+  margin-top:5vh;
 }
 
 .AssetPostForm, .transactionPatchForm {
@@ -98,14 +107,16 @@ body {
   position:relative;
   /* border: 5px black solid; */
   background-color: lightblue;
-  width: 75vw;
+  width: 86vw;
   height:15vh;
   margin:auto;
   align-items: center;
+  border-radius:.2vw;
 }
 
 .transactionLabel {
   font-size: 1.5rem;
+  
 }
 
 /* .transactionPatchForm {
@@ -125,17 +136,18 @@ body {
   position:relative;
   left:.5vw;
   height:5vh;
-  width:10vw;
+  width:12vw;
   text-align:center;
+  margin-right:1vw;
 }
 
 .submitButton {
   position:relative;
-  left:.5vw;
+  left:1vw;
   height:5vh;
   width:8vw;
   text-align:center;
-
+  /* margin:auto; */
 }
 
 .listOfInvestments {
@@ -146,12 +158,14 @@ body {
 }
 
 .investmentCard {
-  height:25vh;
+  height:15vh;
   width:15vw;
   color:black;
-  border: 5px solid black;
-  box-shadow:  1em 1em black;
-  margin-top: 5vh;
+  border: .2vw solid black;
+  box-shadow:  .5em .5em black;
+  margin-top: 8vh;
+  border-radius:.2vw;
+  /* margin:auto; */
 }
 
 .credentialContainer {
@@ -189,6 +203,8 @@ body {
   top:2vh;
 }
 
+
+
 .userInfoBox {
   position:relative;
   top:15vh;
@@ -200,8 +216,9 @@ body {
 
 }
 
-.accountInfoPatch {
+.accountInfoPatch, .accountInfo  {
   width:13vw;
-
+  margin:2px;
+  text-align:center;
 }
 

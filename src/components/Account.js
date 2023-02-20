@@ -75,13 +75,11 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
   return (
     
       <div className ='userInfoBox'>
-      {`${user.first_name} ${user.last_name}`}
+      <span className='accountInfo'>{`${user.first_name} ${user.last_name}`}</span>
         <br/>
-      {`${user.email}`}
+      <span className='accountInfo'>{`${user.email}`} </span>
      
-        <button 
-        className='accountInfoPatch'
-          onClick={userDelete}>Delete Account</button>
+        
         <form onSubmit={userPatch}>
           <input
             className='accountInfoPatch'
@@ -108,10 +106,12 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
             className='accountInfoPatch'
               type="submit"
               >Change Your Information</button>
+              <button 
+        className='accountInfoPatch'
+          onClick={userDelete}>Delete Account</button>
 
         </form>
             
-      {/* <Transactions /> */}
       </div>
  
   )

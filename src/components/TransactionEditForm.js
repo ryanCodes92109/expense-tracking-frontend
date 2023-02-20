@@ -65,7 +65,7 @@ const handleTransactionSubmit = e => {
             <input 
               className='postInput'
               type='text'
-              placeholder='Place of Purchase'
+              placeholder='Enter Place of Purchase'
               name='vendor_name'
               value={user.vendor_name}
               onChange={handleTransactionChange}
@@ -76,7 +76,7 @@ const handleTransactionSubmit = e => {
             <input 
               className='postInput'
               type='text'
-              placeholder='Amount Spent'
+              placeholder='Enter Amount Spent'
               name='amount_spent'
               value={user.amount_spent}
               onChange={handleTransactionChange}

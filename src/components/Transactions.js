@@ -22,7 +22,7 @@ const Transactions = ({transactionData, setTransactionData}) => {
     const columns = [
     {field:"id", headerName:'Id', editable: true},
     {field:"vendor_name", headerName:'Place of Purchase',editable: true, width:300},
-    {field:"amount_spent", headerName:'Cost',editable: true, width:300} ,
+    {field:"amount_spent", headerName:'Amount',editable: true, width:300} ,
     {field: 'user_id', headerName: "User", editable: true}   
     ]
     if(!user) {
