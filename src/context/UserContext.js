@@ -23,51 +23,6 @@ useEffect(() => {
         }
     })
 }, []);
-  // console.log(user)
-
-    //fetch for login and create and logout
-    
-    // const loginSubmit = (e,loginFormData) => {
-    //     e.preventDefault()
-    //     fetch('/login', {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(loginFormData),
-    //     })
-    //     .then(res => {
-    //       res.json()
-    //       .then(userObj => {
-    //         setUser(userObj)
-    //         navigate('/transactions')
-    //         })
-    //     }
-        
-    //     )
-        
-        
-    
-    //     console.log('submitting')
-    //   }
-    
-      // const createUserSubmit = (e, signupFormData) => {
-      //   e.preventDefault()
-      //   fetch('/signup', {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(signupFormData),
-      //   })
-      //   .then(res => {
-      //     res.json()})
-      //   .then(
-      //     setUser
-          
-      //     )
-      //   // .then(userObj => setUser(userObj))
-      //  }
 
        const [loginFormData,setLoginFormData] = useState({
         first_name: '',
@@ -94,7 +49,7 @@ useEffect(() => {
               console.log(res)
             } else {
               res.json()
-              .then(error => console.log(error))
+              .then(error => alert(error))
             }
         })
       }

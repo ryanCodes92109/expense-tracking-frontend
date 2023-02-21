@@ -2,7 +2,6 @@ import React, {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 
 const AddAssetForm = ({assets}) => {
-    // console.log(assets)
     const {setUser} =useContext(UserContext)
     const initialAssetFormValues =
     {

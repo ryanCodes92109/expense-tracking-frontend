@@ -5,7 +5,6 @@ import AddAssetForm from './AddAssetForm'
 
 
 const Assets = ({assets, user, created_assets}) => {
-  // const {user} = useContext(UserContext)
 
   const mappedAssets = assets.map(asset => 
   <AssetCard 

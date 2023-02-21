@@ -57,8 +57,6 @@ const handleTransactionSubmit = e => {
       <form 
         className='transactionPatchForm' 
         onSubmit={handleTransactionSubmit}>
-        {/* <label className= 'addNewTransactionLabel'>Add New Transaction</label>
-            <br/> */}
 
           <div className = 'addTransactionFormInput'>
          

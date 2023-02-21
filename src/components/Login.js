@@ -32,14 +32,15 @@ const Home = ({setToggleAuth}) => {
                 navigate('/transactions')
               }
             )
+          } else {
+            res.json()
+            .then(error => alert("Login unsuccessful, check your email or password and try again."))
           }
         }
       )
       
           console.log('submitting')
         }
-
- 
 
   return (
     <div className='credentialContainer'>
@@ -74,7 +75,9 @@ const Home = ({setToggleAuth}) => {
 
           <br/>
           <br/>
+
           <Link onClick={() => setToggleAuth(currentVal => !currentVal)}>Don't have an account? Sign up here.</Link>
+
       </form>
    
       </div>

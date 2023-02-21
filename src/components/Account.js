@@ -61,7 +61,7 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
          
          console.log(res)
         } else {
-          console.log(res)
+          alert(res)
         }
       })
     }
