@@ -2,12 +2,14 @@ import React, {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 
 const AddAssetForm = ({assets}) => {
-    const {setUser} =useContext(UserContext)
+    const {user, setUser} =useContext(UserContext)
     const initialAssetFormValues =
     {
         investment_name: '',
-        investment_amount: ''
+        investment_amount: '',
+        transaction_id: ''
       }
+      // console.log(initialAssetFormValues)
 
     const [formAssetData, setFormAssetData] = useState(initialAssetFormValues)
 
@@ -42,7 +44,16 @@ const AddAssetForm = ({assets}) => {
     })
     
   }
-    
+
+const userTransactions = user.transactions
+const mappedTransactions = userTransactions.map(transaction => (
+  <option 
+    key={transaction.id} 
+    name={transaction.vendor_name} 
+    value={transaction.id}
+    >{transaction.vendor_name}</option>))
+    console.log(mappedTransactions)
+
   return (
     <div className='addAssetsForm'>
       <form 
@@ -58,7 +69,7 @@ const AddAssetForm = ({assets}) => {
               name='investment_name'
               value={assets.investment_name}
               onChange={handleAssetChange}
-              ></input>
+              />
           </div>
 
           <div className = 'addAssetFormInput'>
@@ -69,8 +80,23 @@ const AddAssetForm = ({assets}) => {
               name='investment_amount'
               value={assets.investment_amount}
               onChange={handleAssetChange}
-              ></input>
+              />
           </div>
+
+          <div className = 'addAssetFormInput'>
+            <select 
+              className='postInput'
+              type='text'
+              placeholder='Enter Linked Transaction'
+              name='investment_amount'
+              value={assets.asset_id}
+              onChange={handleAssetChange}
+              >
+                {/* {mappedAssets} */}
+                {mappedTransactions}
+              </select>
+          </div>
+      
         <button 
           className='submitButton'
           type='submit' >Add Investment</button>

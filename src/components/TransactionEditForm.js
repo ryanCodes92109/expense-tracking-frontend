@@ -10,9 +10,10 @@ const TransactionEditForm = () => {
     setShowNewTransactionForm(currentValue => !currentValue)
   }
   
-  const initialTransactionFormValues ={
+  const initialTransactionFormValues = {
     vendor_name: '',
-    amount_spent: ''
+    amount_spent: '',
+    asset_id: ''
   }
 
   const [formTransactionData, setFormTransactionData] = useState(initialTransactionFormValues)
@@ -47,9 +48,25 @@ const handleTransactionSubmit = e => {
     }
 
   })
-  
 }
-    
+
+const userAssets = user.assets
+console.log(userAssets)
+const mappedAssets = userAssets.map(asset =>  (
+  <option 
+    key ={asset.id} 
+    // name={asset.investment_name}
+    value={asset.id}
+    >{asset.investment_name}</option>
+    )
+)
+
+console.log(mappedAssets)    
+
+
+// const mappedTransactions = userTransactions.map(transaction => (
+//   <option key={transaction.id} name={transaction.vendor_name} value={transaction.id}>{transaction.vendor_name}</option>))
+
   return (
 
     <>
@@ -80,6 +97,15 @@ const handleTransactionSubmit = e => {
               onChange={handleTransactionChange}
               ></input>
           </div>
+
+          <select 
+            className = 'addTransactionFormInput'
+              name='asset_id'
+              value={formTransactionData.asset_id}
+              onChange={handleTransactionChange}
+              >
+            {mappedAssets}
+          </select> 
        
         <button 
           className ='submitButton' 
