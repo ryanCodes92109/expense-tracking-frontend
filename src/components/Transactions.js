@@ -21,12 +21,17 @@ const Transactions = ({transactionData, setTransactionData}) => {
 
     const columns = [
     {field:"id", headerName:'Id', editable: true},
+
+    {field: "asset_id", HeaderName:"Associated Asset", editable:true, width:300},
     {field:"vendor_name", headerName:'Place of Purchase',editable: true, width:300},
-    {field:"amount_spent", headerName:'Cost',editable: true, width:300}    
+    {field:"amount_spent", headerName:'Amount',editable: true, width:300} 
+
     ]
     if(!user) {
       return <h1>Loading</h1>
     }
+
+    // console.log(user.transactions)
 
   return (
     <div className='transactionsContainer'>
@@ -36,12 +41,16 @@ const Transactions = ({transactionData, setTransactionData}) => {
         />
         <div className='transactions'>
           <label className='transactionLabel'>Transactions</label>
+
+
         <DataGrid
+          className='transactionGrid'
           checkboxSelection
           columns={columns}
           rows={user.transactions}
 
             />
+
         </div>
     </div>
   )

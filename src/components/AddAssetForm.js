@@ -2,13 +2,16 @@ import React, {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 
 const AddAssetForm = ({assets}) => {
-    // console.log(assets)
-    const [toggleAddAssetForm, setToggleAddAssetForm] = useState(true)
-    const {setUser} =useContext(UserContext)
-    const initialAssetFormValues = {
+
+    const {user, setUser} =useContext(UserContext)
+    const initialAssetFormValues =
+    {
         investment_name: '',
-        investment_amount: ''
+        investment_amount: '',
+        transaction_id: ''
       }
+      // console.log(initialAssetFormValues)
+
 
     const [formAssetData, setFormAssetData] = useState(initialAssetFormValues)
 
@@ -16,11 +19,6 @@ const AddAssetForm = ({assets}) => {
         setUser(currentUser => ({...currentUser, created_assets: [...currentUser.created_assets, newAsset]}) )
       }
 
-  const toggleNewAssetForm = e => {
-    console.log('click')
-    setToggleAddAssetForm(currentValue => !currentValue)
-  }
-  
   const handleAssetChange = (e) => {
     const {name, value} = e.target
     setFormAssetData({ ...formAssetData, [name]: value })
@@ -48,44 +46,66 @@ const AddAssetForm = ({assets}) => {
     })
     
   }
-    
+
+const userTransactions = user.transactions
+const mappedTransactions = userTransactions.map(transaction => (
+  <option 
+    key={transaction.id} 
+    name={transaction.vendor_name} 
+    value={transaction.id}
+    >{transaction.vendor_name}</option>))
+    console.log(mappedTransactions)
+
 
   return (
     <div className='addAssetsForm'>
       <form 
         className='AssetPostForm' 
-        onSubmit={handleAssetSubmit}
-      >
+
+        onSubmit={handleAssetSubmit}>
+
+      <div className = 'addAssetFormInput'>
+
             <input 
-            className='assetInput'
+              className='postInput'
               type='text'
-              placeholder='Name of Investment'
+              placeholder='Enter Name of Investment'
               name='investment_name'
-              value={formAssetData.investment_name}
+              value={assets.investment_name}
               onChange={handleAssetChange}
-              ></input>
-              <br/>
+              />
+          </div>
 
+          <div className = 'addAssetFormInput'>
             <input 
-            className='assetInput'
+              className='postInput'
               type='decimal'
-              placeholder='Amount Invested'
+              placeholder='Enter Amount of Investment'
               name='investment_amount'
-              value={formAssetData.investment_amount}
+              value={assets.investment_amount}
               onChange={handleAssetChange}
-              ></input>
-            <br/>
+              />
+          </div>
 
+          <div className = 'addAssetFormInput'>
+            <select 
+              className='postInput'
+              type='text'
+              placeholder='Enter Linked Transaction'
+              name='investment_amount'
+              value={assets.asset_id}
+              onChange={handleAssetChange}
+              >
+                {/* {mappedAssets} */}
+                {mappedTransactions}
+              </select>
+          </div>
+      
         <button 
-          className='addAssetBtn' 
-          type='submit' >Add New Investment</button>
-        
+          className='submitButton'
+          type='submit' >Add Investment</button>
       </form>
 
-      {/* <button 
-          className='addAssetBtn'
-          onClick = {toggleNewAssetForm}
-          type='text'>Hide </button> */}
     </div>
   )
 }

@@ -1,34 +1,53 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+  }
+
 html {
   background-color: black;
-  display:absolute;
-
+  display:fixed;
 }
 
 body {
-  background-color:grey;
-  display:fixed;
+  background-color:rgb(195, 194, 194);
+
   margin-left: 7vw;
   margin-right:7vw;
   margin-top: 5vh;
   margin-bottom:5vh;
   height:100vh;
-  overflow:none;
+
+  overflow:scroll;
 }
 
 .appTitle {
-  background-color: lightblue;
+  background-color: rgb(194, 233, 246);
   width:86vw;
   margin:auto;
-  margin-left:3vw;
+  /* margin-left:1vw; */
+
   text-align:left;
   height:5vh;
   font-size: 5vh;
 }
 
 .navContainer {
-  background-color: lightblue;
+
+  background-color: rgb(194, 233, 246);
   height:14vh;
   display:flex;
+  
+}
+
+.money-icon {
+  width:4vw;
+  height:8vh;
+  margin:auto;
+  position:relative;
+  top:1vh;
+
 }
 
 .navBar {
@@ -38,16 +57,23 @@ body {
   display:flex;
   justify-content:flex-end;
   align-items:top;
+
+  
 }
 
 .navButton {
-  border:solid 3px black;
-  width:7vw;
-  height:3vh;
+  /* border:solid .1vw black; */
+  width:6vw;
+  height:6vh;
   text-align: center;
-  margin-top:auto;
-  margin-bottom: auto;
-  background-color:grey;
+  margin:.1vw;
+  background-color: rgb(194, 233, 246);
+  position:relative;
+  /* background-color:rgb(195, 194, 194); */
+  color:black;
+  padding:1vh;
+  justify-content: space-around;
+
 }
 
 .navButton:hover {
@@ -56,27 +82,33 @@ body {
 }
 .navButton:visited {
   text-decoration: none;
+
+  color:black;
+
 }
 
 .transactionContainer {
   background-color: white;
   display:flex;
 }
+
+
 .transactions {
   background-color: white;
-  border:solid 3px black;
-  width: 75vw;
-  height:50vh;
+  /* border:solid 3px black; */
+  box-shadow:  .5em 1em black;
+  height: 60vh;
+  width:65vw;
   text-align:center;
   margin:auto;
-  /* margin-top: 5vh; */
+  margin-top: 2.5vh;
 
-  overflow:scroll;
 }
 
 .deleteBtn {
   border: solid 5px black;
 }
+
 
 .transactionPatchForm {
   width: 75vw;  
@@ -122,78 +154,143 @@ body {
   left:.5vw;
 }
 
+.assetContainer {
+  display:flex;
+  /* position:absolute;
+  top:vh; */
+  /* border: 5px solid black; */
+  width: 75vw;
+  height:50vh;
+  background-color: rgb(194, 233, 246);
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow:scroll;
+  margin-top:5vh;
+}
+
+.AssetPostForm, .transactionPatchForm {
+  display:flex;
+  position:relative;
+  /* border: 5px black solid; */
+  background-color: lightblue;
+  width: 84.9vw;
+  height:15vh;
+  margin:auto;
+  align-items: center;
+  border-radius:.2vw;
+}
+
+.transactionLabel {
+  font-size: 1.5rem;
+  
+}
+
+/* .transactionPatchForm {
+  display:flex;
+  position:relative;
+  /* border: 5px black solid; */
+  /* background-color: lightblue;
+  width: 75vw;
+  height:15vh;
+  margin:auto;
+  align-items: center;
+} */ 
+
+
+
+.postInput {
+  position:relative;
+  left:.5vw;
+  height:5vh;
+  width:12vw;
+  text-align:center;
+  margin-right:1vw;
+}
+
+.submitButton {
+  position:relative;
+  left:1vw;
+  height:5vh;
+  width:8vw;
+  text-align:center;
+  /* margin:auto; */
+}
 
 .listOfInvestments {
   display:flex;
   justify-content: space-around;
- 
+
+  align-content: space-around;
   flex-wrap: wrap;
 }
 
-.investmentList {
-  /* overflow:scroll; */
-  display:flex;
-  background-color: lightblue;
-  justify-content: space-between;
-  margin:auto;
-  margin-top:5vh;
-
-}
-
 .investmentCard {
-  height:25vh;
+  height:15vh;
   width:15vw;
-  margin:auto;
   color:black;
-  border: 5px solid black;
-  text-align:center;
-  justify-content: space-between;
-  box-shadow:  1em 1em black;
+  border: .2vw solid black;
+  box-shadow:  .5em .5em black;
+  margin-top: 8vh;
+  border-radius:.2vw;
+  /* margin:auto; */
 }
 
 .credentialContainer {
   display:flex;
-  justify-content: center; 
-  align-items: center;
-  align-content:center; 
+  position: relative;
+  top:20vh;
   margin:auto;
+  width:15vw;
+  height:40vh;
+  background-color: lightblue;
+
 }
 
 .signinForm {
   border: solid 5px black;
   width:15vw;
   height:40vh;
+
+  min-height:30vh;
+  min-width:15vw;
   background-color: lightblue;
-  align-content:center;
   margin:auto;
+  box-shadow:  1em 1em black;
 }
 
 .signUpForm {
   border: solid 5px black;
   width:15vw;
-  height:40vh;
+
+  height:50vh;
   background-color: lightblue;
   align-content:center;
   margin:auto;
+  box-shadow:  1em 1em black;
 }
 
-.userInfoBoxParent {
-  margin:auto;
-  
+.toggleSignInLink {
+  position:relative;
+  top:2vh;
 }
+
+
 
 .userInfoBox {
-  display:relative ;
-  left: 50%;
+  position:relative;
+  top:15vh;
   border: solid 5px black;
   width: 15vw;
-  height:25vh;
+  height:35vh;
   margin:auto;
   background-color:lightblue;
 
 }
 
-.accountInfoPatch {
-  width:13vw;
 
+.accountInfoPatch, .accountInfo  {
+  width:13vw;
+  margin:2px;
+  text-align:center;
 }
+

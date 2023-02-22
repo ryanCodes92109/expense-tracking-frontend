@@ -15,6 +15,9 @@ function App() {
   const [transactionData, setTransactionData] = useState([])
   // const [assets, setAssets] = useState([])
 
+
+  // console.log(user)
+
     const [toggleAuth, setToggleAuth] = useState(false)
 
       if (!user) {
