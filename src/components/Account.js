@@ -11,7 +11,6 @@ const Account = () => {
 
 const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange, setUser, setSignupFormData} = useContext(UserContext)
 
-
   const [toggleAuth, setToggleAuth] = useState(false)
 
   const initialPatchFormValues = {
@@ -21,7 +20,6 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
       email: ""
     }
   
-
   const [patchFormValues, setPatchFormValues] = useState({
     first_name: user.first_name,
     last_name: user.last_name,
@@ -44,7 +42,6 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
       })
       .then(setUser(patchFormValues))
       setPatchFormValues(initialPatchFormValues)
-      // .then(userObj => setUser(userObj))
      }
 
     const patchHandleChange = (e) => {
@@ -52,7 +49,6 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
       setPatchFormValues((previousFormValues) => ({ ...previousFormValues, [name]: value }));
     };
     
-
     const userDelete = e => {
       fetch(`users/${user.id}`, {
         method: 'DELETE'
@@ -69,11 +65,9 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
       })
     }
    
-
   if (!user) {
     return (
-      toggleAuth && <Login setToggleAuth={setToggleAuth}/>) || (<Signup  setToggleAuth={setToggleAuth}/>
-    )
+      toggleAuth && <Login setToggleAuth={setToggleAuth}/>) || (<Signup  setToggleAuth={setToggleAuth}/>)
   }
   return (
 
@@ -119,7 +113,6 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
             
       </div>
  
-
   )
 }
   

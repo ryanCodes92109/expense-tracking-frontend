@@ -13,7 +13,7 @@ WHERE MY MONEY was built using React with a Rails API that handles secure passwo
 
 To begin, fork and clone both repository's: 
 Frontend
-https://github.com/Shenanigans570/Expense-Tracking---Frontend
+https://github.com/ryanCodesFrontEnd/expense-tracking-frontend
 Backend
 https://github.com/Shenanigans570/Expense-tracking-project
 

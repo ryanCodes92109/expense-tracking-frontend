@@ -5,10 +5,16 @@ const UserContext = createContext()
 const UserProvider = ({children}) => {
 
     const [user, setUser] = useState(null)
-    
+    const [transactionData, setTransactionData] = useState([])
 
   const [selectionModel,setSelectionModel] = useState()
-
+  const [loginFormData,setLoginFormData] = useState({
+    first_name: '',
+    last_name: '' ,
+    email: '',
+    password: ''
+  })
+  
 useEffect(() => {
     fetch("/authorized_user")
     .then((res) => {
@@ -25,12 +31,7 @@ useEffect(() => {
 }, []);
 
 
-       const [loginFormData,setLoginFormData] = useState({
-        first_name: '',
-        last_name: '' ,
-        email: '',
-        password: ''
-      })
+     
 
        const handleChange = ({target: {name, value}}) => {
         setLoginFormData(currentUser => ({
@@ -51,13 +52,13 @@ useEffect(() => {
             } else {
               res.json()
 
-              .then(error => alert(error))
+              .then(error => alert('Something went wrong'))
 
             }
         })
       }
       
-      const [transactionData, setTransactionData] = useState([])
+    
 
       const addTransaction = newTransaction => {
         setTransactionData(current => [newTransaction,...current ])
