@@ -22,6 +22,7 @@ body {
   display:fixed;
 }
 
+
 .appTitle {
   width:86vw;
   margin:auto;
@@ -31,18 +32,18 @@ body {
   font-size: 5vh;
 }
 
-.navContainer {
-  height:14vh;
-  display:flex;
-}
-
 .money-icon {
-  width:4vw;
-  height:8vh;
+  width:4rem;
+  height:4rem;
   margin:auto;
   position:relative;
   top:1vh;
   background-color:white;
+}
+
+.navContainer {
+  height:14vh;
+  display:flex;
 }
 
 .navBarActive {
@@ -60,7 +61,6 @@ body {
 }
 
 .navBarHidden {
-  /* width: 86vw; */
   position:relative;
   right:-100vw;
   margin:auto;
@@ -77,10 +77,7 @@ body {
   align-items:center;
   display:flex;
   right:1rem;
-  /* background-color:white; */
   height:4rem;
-  /* width:4rem; */
-  /* margin:auto; */
   transition: 500ms;
 
 }
@@ -98,7 +95,7 @@ body {
 }
 
 .navButton:hover {
-  /* background-color: black; */
+
   color:white;
   text-decoration: none;
 }
@@ -108,15 +105,140 @@ body {
   color:black;
 }
 
+.transactionPatchForm {
+  width: 11rem;
+  height:10rem;
+  background-color:white;
+  position:absolute;
+  top:15rem;
+  display:flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content:center;
+  padding:1rem;
+}
+
+.addTransactionFormInput {
+  border: 5px solid black;
+  width:10rem;
+  height:2rem;
+}
+
+.submitButton {
+  width:10rem;
+}
+
+.toggleMenuButton {
+  color:black;
+  position:absolute;
+  top:6rem;
+  left:14rem;
+  /* background-color:rgba(255,255,255,.5); */
+  transition:500ms;
+  z-index:5;
+  font-size: large;
+
+}
+
+.hideMenuButton {
+  color:black;
+  position:absolute;
+  top:7rem;
+  left:1rem;
+  background-color:rgba(255,255,255,.5);
+  transition:500ms;
+  font-size: large;
+  width:10rem;
+  text-align:center;
+}
+
+.toggleMenuLabel {
+  position:absolute;
+  left:2rem;
+  /* border:5px solid white; */
+  /* background-color:rgba(255,255,255,.5); */
+  color:black;
+  z-index:6;
+}
+
+.hideMenuLabel {
+  /* color:white; */
+  position:absolute;
+  left:2rem;
+  /* border:5px solid white; */
+  background-color:rgba(255,255,255,.5);
+
+}
+
+.transactionMenuHidden {
+  /* width: 10rem; */
+  width:10rem;
+  height:10rem;
+  background-color:rgba(255,255,255,.5);
+  display:flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content:center;
+  padding:1rem;
+  position:absolute;
+  left:-100vw;
+  transition:500ms;
+}
+
+
+.transactionMenuActive {
+  position:absolute;
+  left:1rem;
+  width:13rem;
+  height:10rem;
+  background-color:rgba(255,255,255,.5);
+  display:flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content:center;
+  padding:1rem;
+  transition:500ms;
+
+}
+
+/* .transactionFormContainer {
+  border:5px solid white;
+  display:flex;
+  width:15rem;
+  height:15rem;
+  justify-content:center;
+  align-items:center;
+} */
+
+
 .transactionContainer {
-  /* background-color: white; */
   display:flex; 
 }
 
 
 .transactions {
   background-color: white;
-  /* border:solid 3px black; */
+  box-shadow:  .5em 1em black;
+  height: 90vh;
+  width:65vw;
+  text-align:center;
+  margin:auto;
+  margin-top: 2.5vh;
+
+}
+
+/*
+
+
+
+
+.transactionContainer {
+  display:flex; 
+}
+
+
+.transactions {
+  background-color: white;
   box-shadow:  .5em 1em black;
   height: 60vh;
   width:65vw;
@@ -130,20 +252,14 @@ body {
   border: solid 5px black;
 }
 
-.transactionPatchForm {
-  width: 25vw;
-  height:50vh;
-  display:flex;
-  border:5px solid white;
-}
+
 
 .assetContainer {
   display:flex;
-  /* position:absolute; */
+
   border: 5px solid black;
   width: 75rem;
   height:100rem;
-  /* background-color:lightblue; */
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
@@ -151,11 +267,9 @@ body {
 }
 
 .AssetPostForm {
-  /* border: 5px solid black; */
   width: 75vw;  
   height:10vh;
   display:flex;
-  /* background-color: lightblue; */
 
 }
 .assetInput, .addAssetBtn, .newTransactionButton, .newTransactionInput {
@@ -181,8 +295,7 @@ body {
 .AssetPostForm, .transactionPatchForm {
   display:flex;
   position:relative;
-  /* border: 5px black solid; */
-  /* background-color: lightblue; */
+
   width: 84.9vw;
   height:15vh;
   margin:auto;
@@ -202,7 +315,6 @@ body {
   width:12vw;
   text-align:center;
   margin-right:1vw;
-  /* border:5px solid black; */
 }
 
 .submitButton {
@@ -268,7 +380,6 @@ body {
 }
 
 .userInfoBox {
-  /* position:relative; */
   top:15vh;
   border: solid 1px black;
   width: 15vw;
@@ -289,3 +400,4 @@ body {
   text-align:center;
 }
 
+*/
