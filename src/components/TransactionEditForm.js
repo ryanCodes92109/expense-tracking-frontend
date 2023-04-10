@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContext'
 const TransactionEditForm = () => {
 
   const {user, setUser} = useContext(UserContext)
-  const [showNewTransactionForm, setShowNewTransactionForm] = useState(true)
+  const [showNewTransactionForm, setShowNewTransactionForm] = useState(false)
 
 
   const toggleNewTransactionForm = e => {
@@ -75,7 +75,7 @@ const mappedAssets = userAssets.map(asset =>  (
     <>
      {showNewTransactionForm ? <span className= 'toggleMenuLabel'>Enter New Transactions</span> : <span className='hideMenuLabel'></span>}
 
-      {showNewTransactionForm ? <span className= 'toggleMenuButton' onClick={toggleNewTransactionForm}>X</span> : <span className= 'hideMenuButton' onClick={toggleNewTransactionForm}> Click to add new transactions</span>}
+      {showNewTransactionForm ? <span className= 'toggleMenuButton' onClick={toggleNewTransactionForm}>X</span> : <span className= 'hideMenuButton' onClick={toggleNewTransactionForm}> Click here to add new transactions</span>}
 
       <div className={showNewTransactionForm ? 'transactionMenuActive' : 'transactionMenuHidden'}>
         

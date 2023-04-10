@@ -7,69 +7,95 @@
 
 html {
   display:fixed;
+  overflow:none;
+
 }
 
-.app {
+.App {
   display:fixed;
+  overflow:none;
+
 }
 
 body {
   background: rgb(194,233,246);
   background: linear-gradient(310deg, rgba(194,233,246,1) 0%, rgba(200,255,253,1) 40%, rgba(0,0,0,1) 84%);
   width:100vw;
-  height:100vh;
-  overflow:scroll;
+  height:80vh;
+  overflow:none;
   display:fixed;
 }
 
 
 .appTitle {
-  width:86vw;
+  width:60vw;
   margin:auto;
   color: antiquewhite;
   text-align:left;
   height:5vh;
   font-size: 5vh;
+  position:absolute;
+  left:5rem;
+  top:1rem;
 }
 
 .money-icon {
   width:4rem;
   height:4rem;
   margin:auto;
-  position:relative;
+  position:absolute;
   top:1vh;
   background-color:white;
 }
 
 .navContainer {
   height:14vh;
-  display:flex;
+  width:100vw;
+  display:fixed;
+  position:absolute;
 }
 
 .navBarActive {
-  position:relative;
+  position:absolute;
   width: 40rem;
   margin:auto;
   list-style:none;
   display:flex;
   justify-content:flex-end;
   align-items:top;
-  transition: 350ms;
-  border:solid red;
+  transition:750ms;
+  /* border:solid red; */
   right:5rem;
+  top:.1rem;
 
 }
 
 .navBarHidden {
-  position:relative;
+  /* position:absolute;
   right:-100vw;
   margin:auto;
   list-style:none;
-  display:flex;
-  justify-content:flex-end;
+
   align-items:top;
   transition: 350ms;
+  overflow-x:none; */
+  width:10rem;
+  height:10rem;
+  background-color:rgba(255,255,255,.5);
+  display:flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content:center;
+  padding:1rem;
+  position:absolute;
+  left:-100vw;
+  transition:750ms;
+  overflow-x:none;
 }
+
+
+
+
 
 .menuIcon {
   position:absolute;
@@ -110,7 +136,7 @@ body {
   height:10rem;
   background-color:white;
   position:absolute;
-  top:15rem;
+  top:20rem;
   display:flex;
   flex-direction: column;
   align-content:center;
@@ -131,7 +157,7 @@ body {
 .toggleMenuButton {
   color:black;
   position:absolute;
-  top:6rem;
+  top:8rem;
   left:14rem;
   /* background-color:rgba(255,255,255,.5); */
   transition:500ms;
@@ -155,18 +181,20 @@ body {
 .toggleMenuLabel {
   position:absolute;
   left:2rem;
-  /* border:5px solid white; */
-  /* background-color:rgba(255,255,255,.5); */
+  top:8rem;
   color:black;
   z-index:6;
+  transition:700ms;
 }
 
 .hideMenuLabel {
-  /* color:white; */
+  color:white;
   position:absolute;
-  left:2rem;
+  left:-50vw;
+  top:5rem;
   /* border:5px solid white; */
   background-color:rgba(255,255,255,.5);
+  transition:500ms;
 
 }
 
@@ -189,6 +217,7 @@ body {
 .transactionMenuActive {
   position:absolute;
   left:1rem;
+  top:8rem;
   width:13rem;
   height:10rem;
   background-color:rgba(255,255,255,.5);
@@ -213,6 +242,7 @@ body {
 
 .transactionContainer {
   display:flex; 
+  position:absolute;
 }
 
 
@@ -223,8 +253,81 @@ body {
   width:65vw;
   text-align:center;
   margin:auto;
-  margin-top: 2.5vh;
+  /* margin-top: 2.5vh; */
+  position:absolute;
+  top:5vw;
+  display:flex;
+  flex-direction:column;
+  left:20vw;
 
+}
+
+.assetContainer {
+  display:flex;
+  width: 55rem;
+  height:70rem;
+  /* background-color: rgba(194, 233, 246,.5); */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow:scroll;
+  margin:auto;
+}
+
+.listOfInvestments {
+  display:flex;
+  justify-content: space-around;
+  
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.investmentCard {
+  height:5rem;
+  width:13rem;
+  color:black;
+  border: .2vw solid black;
+  box-shadow:  .5em .5em black;
+  /* margin-top: 8vh; */
+  /* margin-right:1rem;
+  margin-left:1rem; */
+  margin:2rem;
+  border-radius:.2vw;
+}
+
+.activeAssetsForm {
+  background-color:white;
+  width:15rem;
+  height:10rem;
+  position:absolute;
+  top:10rem;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.hiddenAssetsForm {
+  background-color:white;
+  width:15rem;
+  height:10rem;
+  position:absolute;
+  top:10rem;
+  left:-100rem;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.postInput {
+  width:12rem;
+}
+
+.newAssetLabel {
+  position:absolute;
+  /* display:flex; */
+  top:2rem;
+  left:1.5rem;
 }
 
 /*
@@ -281,16 +384,7 @@ body {
   left:.5vw;
 }
 
-.assetContainer {
-  display:flex;
-  width: 55rem;
-  height:70rem;
-  background-color: rgba(194, 233, 246,.5);
-  justify-content: space-around;
-  flex-wrap: wrap;
-  overflow:scroll;
-  margin:auto;
-}
+
 
 .AssetPostForm, .transactionPatchForm {
   display:flex;
@@ -333,15 +427,7 @@ body {
   flex-wrap: wrap;
 }
 
-.investmentCard {
-  height:15vh;
-  width:15vw;
-  color:black;
-  border: .2vw solid black;
-  box-shadow:  .5em .5em black;
-  margin-top: 8vh;
-  border-radius:.2vw;
-}
+
 
 .credentialContainer {
   display:flex;

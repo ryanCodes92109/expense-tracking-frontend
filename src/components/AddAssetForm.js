@@ -15,6 +15,10 @@ const AddAssetForm = ({assets}) => {
 
     const [formAssetData, setFormAssetData] = useState(initialAssetFormValues)
 
+    const [toggleAssetsForm, setToggleAssetsForm] = useState(true)
+
+    const showAssetsForm = () => setToggleAssetsForm(!toggleAssetsForm)
+
     const addAsset = newAsset => {
         setUser(currentUser => ({...currentUser, created_assets: [...currentUser.created_assets, newAsset]}) )
       }
@@ -57,10 +61,14 @@ const mappedTransactions = userTransactions.map(transaction => (
     // console.log(mappedTransactions)
 
   return (
-    <div className='addAssetsForm'>
+    <div className={toggleAssetsForm ? 'activeAssetsForm' : 'hiddenAssetsForm'}>
+      <label className ='newAssetLabel'> Submit New Assets</label>
+      <label 
+        className ='hideAssetsFormButton'
+        onClick={showAssetsForm}
+      >X</label>
       <form 
         className='AssetPostForm' 
-
         onSubmit={handleAssetSubmit}>
 
       <div className = 'addAssetFormInput'>
