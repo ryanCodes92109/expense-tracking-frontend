@@ -6,39 +6,34 @@
   }
 
 html {
-  background-color: black;
+  display:fixed;
+}
+
+.app {
   display:fixed;
 }
 
 body {
-  background-color:rgb(195, 194, 194);
-
-  margin-left: 7vw;
-  margin-right:7vw;
-  margin-top: 5vh;
-  margin-bottom:5vh;
+  background: rgb(194,233,246);
+  background: linear-gradient(310deg, rgba(194,233,246,1) 0%, rgba(200,255,253,1) 40%, rgba(0,0,0,1) 84%);
+  width:100vw;
   height:100vh;
-
   overflow:scroll;
+  display:fixed;
 }
 
 .appTitle {
-  background-color: rgb(194, 233, 246);
   width:86vw;
   margin:auto;
-  /* margin-left:1vw; */
-
+  color: antiquewhite;
   text-align:left;
   height:5vh;
   font-size: 5vh;
 }
 
 .navContainer {
-
-  background-color: rgb(194, 233, 246);
   height:14vh;
   display:flex;
-  
 }
 
 .money-icon {
@@ -47,49 +42,75 @@ body {
   margin:auto;
   position:relative;
   top:1vh;
-
+  background-color:white;
 }
 
-.navBar {
-  width: 86vw;
+.navBarActive {
+  position:relative;
+  width: 40rem;
   margin:auto;
   list-style:none;
   display:flex;
   justify-content:flex-end;
   align-items:top;
+  transition: 350ms;
+  border:solid red;
+  right:5rem;
 
-  
+}
+
+.navBarHidden {
+  /* width: 86vw; */
+  position:relative;
+  right:-100vw;
+  margin:auto;
+  list-style:none;
+  display:flex;
+  justify-content:flex-end;
+  align-items:top;
+  transition: 350ms;
+}
+
+.menuIcon {
+  position:absolute;
+  justify-content: center;
+  align-items:center;
+  display:flex;
+  right:1rem;
+  /* background-color:white; */
+  height:4rem;
+  /* width:4rem; */
+  /* margin:auto; */
+  transition: 500ms;
+
 }
 
 .navButton {
-  /* border:solid .1vw black; */
+  display:flex;
   width:6vw;
   height:6vh;
   text-align: center;
-  margin:.1vw;
-  background-color: rgb(194, 233, 246);
   position:relative;
-  /* background-color:rgb(195, 194, 194); */
   color:black;
-  padding:1vh;
-  justify-content: space-around;
-
+  padding:1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .navButton:hover {
-  background-color: black;
+  /* background-color: black; */
   color:white;
+  text-decoration: none;
 }
+
 .navButton:visited {
   text-decoration: none;
-
   color:black;
-
 }
 
 .transactionContainer {
-  background-color: white;
-  display:flex;
+  /* background-color: white; */
+  display:flex; 
 }
 
 
@@ -109,31 +130,24 @@ body {
   border: solid 5px black;
 }
 
-
 .transactionPatchForm {
-  width: 75vw;  
-  height:10vh;
+  width: 25vw;
+  height:50vh;
   display:flex;
-  background-color: lightblue;
-  text-align:center;
-  align-items: center;
-  margin:auto;
-}
-
-.newTransactionFlexContainer {
-
+  border:5px solid white;
 }
 
 .assetContainer {
   display:flex;
   /* position:absolute; */
   border: 5px solid black;
-  width: 75vw;
-  height:70vh;
-  background-color:lightblue;
+  width: 75rem;
+  height:100rem;
+  /* background-color:lightblue; */
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
+  border: 5px solid white;
 }
 
 .AssetPostForm {
@@ -141,9 +155,8 @@ body {
   width: 75vw;  
   height:10vh;
   display:flex;
-  background-color: lightblue;
-  
-  
+  /* background-color: lightblue; */
+
 }
 .assetInput, .addAssetBtn, .newTransactionButton, .newTransactionInput {
   height: 5vh;
@@ -156,23 +169,20 @@ body {
 
 .assetContainer {
   display:flex;
-  /* position:absolute;
-  top:vh; */
-  /* border: 5px solid black; */
-  width: 75vw;
-  height:50vh;
-  background-color: rgb(194, 233, 246);
+  width: 55rem;
+  height:70rem;
+  background-color: rgba(194, 233, 246,.5);
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
-  margin-top:5vh;
+  margin:auto;
 }
 
 .AssetPostForm, .transactionPatchForm {
   display:flex;
   position:relative;
   /* border: 5px black solid; */
-  background-color: lightblue;
+  /* background-color: lightblue; */
   width: 84.9vw;
   height:15vh;
   margin:auto;
@@ -185,19 +195,6 @@ body {
   
 }
 
-/* .transactionPatchForm {
-  display:flex;
-  position:relative;
-  /* border: 5px black solid; */
-  /* background-color: lightblue;
-  width: 75vw;
-  height:15vh;
-  margin:auto;
-  align-items: center;
-} */ 
-
-
-
 .postInput {
   position:relative;
   left:.5vw;
@@ -205,6 +202,7 @@ body {
   width:12vw;
   text-align:center;
   margin-right:1vw;
+  /* border:5px solid black; */
 }
 
 .submitButton {
@@ -213,7 +211,6 @@ body {
   height:5vh;
   width:8vw;
   text-align:center;
-  /* margin:auto; */
 }
 
 .listOfInvestments {
@@ -232,7 +229,6 @@ body {
   box-shadow:  .5em .5em black;
   margin-top: 8vh;
   border-radius:.2vw;
-  /* margin:auto; */
 }
 
 .credentialContainer {
@@ -243,14 +239,12 @@ body {
   width:15vw;
   height:40vh;
   background-color: lightblue;
-
 }
 
 .signinForm {
   border: solid 5px black;
   width:15vw;
   height:40vh;
-
   min-height:30vh;
   min-width:15vw;
   background-color: lightblue;
@@ -261,7 +255,6 @@ body {
 .signUpForm {
   border: solid 5px black;
   width:15vw;
-
   height:50vh;
   background-color: lightblue;
   align-content:center;
@@ -274,17 +267,19 @@ body {
   top:2vh;
 }
 
-
-
 .userInfoBox {
-  position:relative;
+  /* position:relative; */
   top:15vh;
-  border: solid 5px black;
+  border: solid 1px black;
   width: 15vw;
   height:35vh;
   margin:auto;
-  background-color:lightblue;
-
+  position: absolute;
+  left: 50%;
+  top:35%;
+  text-align:center;
+  background-color:	rgba(211,211,211, .3);
+ 
 }
 
 

@@ -54,8 +54,7 @@ const mappedTransactions = userTransactions.map(transaction => (
     name={transaction.vendor_name} 
     value={transaction.id}
     >{transaction.vendor_name}</option>))
-    console.log(mappedTransactions)
-
+    // console.log(mappedTransactions)
 
   return (
     <div className='addAssetsForm'>

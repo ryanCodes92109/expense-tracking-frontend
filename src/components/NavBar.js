@@ -1,12 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 import Account from './Account'
-
 import moneySymbol from './moneySymbol.png'
+import { RiMenuFoldFill } from 'react-icons/ri';
+
 
 const NavBar = () => {
   const {handleLogout} = useContext(UserContext)
+
+  const [toggleMenu, setToggleMenu] = useState(false)
+
+  const showMenuBar = () => setToggleMenu(!toggleMenu)
 
   
   return (
@@ -16,7 +21,11 @@ const NavBar = () => {
         <img className="money-icon" src={moneySymbol} alt="logo"/>
 
         <p className='appTitle'>WHERE MA' MONEY</p>
-        <ul className='navBar'>
+
+        <span className='menuIcon'><RiMenuFoldFill size={35} onClick={showMenuBar}/></span>
+        
+        <ul className={toggleMenu ? 'navBarActive' : 'navBarHidden'}>
+        
 
 
           <Link to='/transactions'>

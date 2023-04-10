@@ -73,9 +73,10 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
 
     
       <div className ='userInfoBox'>
-      <span className='accountInfo'>{`${user.first_name} ${user.last_name}`}</span>
-        <br/>
-      <span className='accountInfo'>{`${user.email}`} </span>
+      <span className='accountInfo'>Name: {`${user.first_name} ${user.last_name}`}</span>
+      <br/>
+
+      <span className='accountInfo'>Email: {`${user.email}`} </span>
      
 
         <form onSubmit={userPatch}>
