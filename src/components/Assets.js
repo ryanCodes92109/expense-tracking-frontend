@@ -6,7 +6,6 @@ import AddAssetForm from './AddAssetForm'
 
 const Assets = ({assets, user, created_assets}) => {
 
-  // console.log(created_assets)
 
 
   const mappedAssets = assets.map(asset => 
@@ -17,9 +16,6 @@ const Assets = ({assets, user, created_assets}) => {
     user = {asset.user_id}
   />)
 
-  // console.log(mappedAssets)
-
-
   const createdAssets= created_assets.map(manuallyCreatedAsset => {
     return <AssetCard 
     key={manuallyCreatedAsset.id}
@@ -29,7 +25,6 @@ const Assets = ({assets, user, created_assets}) => {
     />
   })
 
-//  console.log(createdAssets)
 
   if(!user) {
     return <h1>Loading</h1>
@@ -37,6 +32,7 @@ const Assets = ({assets, user, created_assets}) => {
   return (
     <>
     {/* <div className='listOfInvestments'> */}
+    <span className='showAssetsForm'>Hello</span>
       <AddAssetForm assets={assets}/>
       <div className='assetContainer'>
         {createdAssets}
