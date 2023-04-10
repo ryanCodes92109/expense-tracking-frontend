@@ -5,12 +5,14 @@ import { UserContext } from '../context/UserContext'
 const TransactionEditForm = () => {
 
   const {user, setUser} = useContext(UserContext)
-  const [showNewTransactionForm, setShowNewTransactionForm] = useState(false)
+  const [showNewTransactionForm, setShowNewTransactionForm] = useState(true)
 
 
   const toggleNewTransactionForm = e => {
-    setShowNewTransactionForm(currentValue => !currentValue)
+    setShowNewTransactionForm(!showNewTransactionForm)
   }
+
+  
   
 
   const initialTransactionFormValues = {
@@ -66,63 +68,53 @@ const mappedAssets = userAssets.map(asset =>  (
     )
 )
 
-console.log(mappedAssets)    
-
-
-// const mappedTransactions = userTransactions.map(transaction => (
-//   <option key={transaction.id} name={transaction.vendor_name} value={transaction.id}>{transaction.vendor_name}</option>))
-
+// console.log(mappedAssets)    
 
   return (
 
     <>
-      
-      <form 
-        className='transactionPatchForm' 
-        onSubmit={handleTransactionSubmit}>
+     {showNewTransactionForm ? <span className= 'toggleMenuLabel'>Enter New Transactions</span> : <span className='hideMenuLabel'></span>}
 
-          <div className = 'addTransactionFormInput'>
-         
-            <input 
+      {showNewTransactionForm ? <span className= 'toggleMenuButton' onClick={toggleNewTransactionForm}>X</span> : <span className= 'hideMenuButton' onClick={toggleNewTransactionForm}> Click to add new transactions</span>}
 
-              className='postInput'
-              type='text'
-              placeholder='Enter Place of Purchase'
-              name='vendor_name'
-              value={user.vendor_name}
+      <div className={showNewTransactionForm ? 'transactionMenuActive' : 'transactionMenuHidden'}>
+        
+        <form 
+          onSubmit={handleTransactionSubmit}>
+          <input 
+            className='addTransactionFormInput'
+            type='text'
+            placeholder='Enter Place of Purchase'
+            name='vendor_name'
+            value={user.vendor_name}
+            onChange={handleTransactionChange}
+          ></input>
 
-              onChange={handleTransactionChange}
-              ></input>
-          </div>
-
-          <div className = 'addTransactionFormInput'>
-            <input 
-
-              className='postInput'
-              type='text'
-              placeholder='Enter Amount Spent'
-              name='amount_spent'
-              value={user.amount_spent}
-              onChange={handleTransactionChange}
-              ></input>
-          </div>
+          <input 
+            className='addTransactionFormInput'
+            type='text'
+            placeholder='Enter Amount Spent'
+            name='amount_spent'
+            value={user.amount_spent}
+            onChange={handleTransactionChange}
+          ></input>
 
           <select 
             className = 'addTransactionFormInput'
-              name='asset_id'
-              value={formTransactionData.asset_id}
-              onChange={handleTransactionChange}
-              >
+            name='asset_id'
+            value={formTransactionData.asset_id}
+            onChange={handleTransactionChange}
+          >
             {mappedAssets}
           </select> 
-       
-        <button 
-          className ='submitButton' 
-          type='submit' 
+        
+          <button 
+            className ='submitButton' 
+            type='submit' 
           >Add Transaction</button>
-      </form> 
-    
-
+          
+        </form> 
+      </div>
     </>
   )
 }
