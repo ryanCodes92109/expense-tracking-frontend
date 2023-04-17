@@ -54,6 +54,7 @@ const Home = ({setToggleAuth}) => {
           <br/>
         <TextField 
           onChange={handleChange}
+          className='credentialInput'
           name='email'
           value={loginFormData.email}
           label='Email'
@@ -62,6 +63,7 @@ const Home = ({setToggleAuth}) => {
 
          
         <TextField 
+          className='credentialInput'
           onChange={handleChange}
           name='password'
           type='password'

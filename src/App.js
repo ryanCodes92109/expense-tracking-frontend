@@ -13,10 +13,6 @@ import Account from './components/Account';
 function App() {
   const {user} = useContext(UserContext)
   const [transactionData, setTransactionData] = useState([])
-  // const [assets, setAssets] = useState([])
-
-
-  // console.log(user)
 
     const [toggleAuth, setToggleAuth] = useState(false)
 
@@ -25,8 +21,8 @@ function App() {
           toggleAuth && <Login setToggleAuth={setToggleAuth}/>) || (<Signup  setToggleAuth={setToggleAuth}/>
         )
       }
-      // console.log(user)
-  return (
+
+      return (
     <div className="App">
         <NavBar />
           <Routes>
