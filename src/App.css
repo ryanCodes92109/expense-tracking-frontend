@@ -75,7 +75,6 @@ body {
 }
 
 .navBarHidden {
-
   width:10rem;
   height:10rem;
   background-color:rgba(255,255,255,.5);
@@ -124,7 +123,7 @@ body {
   color:black;
 }
 
-.transactionPatchForm {
+/* .transactionPatchForm {
   width: 11rem;
   height:10rem;
   background-color:white;
@@ -132,28 +131,27 @@ body {
   top:20rem;
   display:flex;
   flex-direction: column;
-  align-content:center;
-  justify-content:center;
   padding:1rem;
-}
+} */
 
 .addTransactionFormInput {
-  border: 5px solid black;
-  width:10rem;
-  height:2rem;
+  position:relative;
+  width:85%;
+  /* margin:auto; */
+  background-color: white;
 }
 
 .submitButton {
-  width:10rem;
+  min-width:40%;
 }
 
 .toggleMenuButton {
   color:black;
   position:absolute;
   top:8rem;
-  left:14rem;
+  left:16rem;
   transition:500ms;
-  z-index:5;
+  z-index:100;
   font-size: large;
 
 }
@@ -169,8 +167,7 @@ body {
   width:10rem;
   text-align:center;
   border-radius: 3rem;
-
-  border-radius: 3rem;
+  z-index:10;
 
 }
 
@@ -179,7 +176,7 @@ body {
   left:2rem;
   top:8rem;
   color:black;
-  z-index:6;
+  z-index:100;
   transition:700ms;
 }
 
@@ -207,21 +204,28 @@ body {
   transition:500ms;
 }
 
-
 .transactionMenuActive {
   position:absolute;
   left:1rem;
   top:8rem;
-  width:13rem;
-  height:10rem;
-  background-color:rgba(255,255,255,.5);
+  width:16rem;
+  height:50vh;
+  background-color:rgba(255,255,255,.7);
   display:flex;
   flex-direction: column;
-  align-content:center;
-  justify-content:center;
-  padding:1rem;
+  align-items: center;
   transition:500ms;
+  z-index:5;
+}
 
+.transactionForm {
+  /* border:5px solid black */
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  margin:auto;
+  height:30vh;
 }
 
 .transactionContainer {
@@ -234,16 +238,15 @@ body {
   background-color: white;
   box-shadow:  .5em 1em black;
   height: 90vh;
-  width:50vw;
-  width:50vw;
+  max-width:70vw;
+  min-width:70vw;
   text-align:center;
   position:relative;
   margin:auto;
   display:flex;
   flex-direction:column;
-  top:10rem;
-  top:10rem;
-
+  top:5rem;
+  z-index:1;
 }
 
 .assetContainer {

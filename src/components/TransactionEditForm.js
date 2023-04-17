@@ -1,5 +1,7 @@
 import {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
+import TextField from '@mui/material/TextField';
+
 
 
 const TransactionEditForm = () => {
@@ -80,24 +82,26 @@ const mappedAssets = userAssets.map(asset =>  (
       <div className={showNewTransactionForm ? 'transactionMenuActive' : 'transactionMenuHidden'}>
         
         <form 
+          className='transactionForm'
           onSubmit={handleTransactionSubmit}>
-          <input 
+
+          <TextField 
             className='addTransactionFormInput'
             type='text'
-            placeholder='Enter Place of Purchase'
+            label='Place of Purchase'
             name='vendor_name'
             value={user.vendor_name}
             onChange={handleTransactionChange}
-          ></input>
+          />
 
-          <input 
+          <TextField 
             className='addTransactionFormInput'
             type='text'
-            placeholder='Enter Amount Spent'
+            label='Amount'
             name='amount_spent'
             value={user.amount_spent}
             onChange={handleTransactionChange}
-          ></input>
+          />
 
           <select 
             className = 'addTransactionFormInput'
