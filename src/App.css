@@ -12,7 +12,7 @@ html {
 
 .App {
   display:fixed;
-  overflow:none;
+  overflow:hidden;
 
 }
 
@@ -52,7 +52,7 @@ body {
   height:14vh;
   width:100vw;
   display:fixed;
-  position:absolute;
+  /* position:relative; */
 }
 
 .navBarActive {
@@ -115,7 +115,7 @@ body {
   text-decoration: none;
 }
 
-.navButton:visited {
+.navButton:visited {              
   text-decoration: none;
   color:black;
 }
@@ -165,6 +165,8 @@ body {
   font-size: large;
   width:10rem;
   text-align:center;
+  border-radius: 3rem;
+
 }
 
 .toggleMenuLabel {
@@ -219,16 +221,6 @@ body {
 
 }
 
-/* .transactionFormContainer {
-  border:5px solid white;
-  display:flex;
-  width:15rem;
-  height:15rem;
-  justify-content:center;
-  align-items:center;
-} */
-
-
 .transactionContainer {
   display:flex; 
   position:absolute;
@@ -239,15 +231,14 @@ body {
   background-color: white;
   box-shadow:  .5em 1em black;
   height: 90vh;
-  width:65vw;
+  width:50vw;
   text-align:center;
-  margin:auto;
   /* margin-top: 2.5vh; */
-  position:absolute;
-  top:5vw;
+  position:relative;
+  margin:auto;
   display:flex;
   flex-direction:column;
-  left:20vw;
+  top:10rem;
 
 }
 
@@ -255,11 +246,12 @@ body {
   display:flex;
   width: 55rem;
   height:70rem;
+  position:relative;
+  top:0;
   /* background-color: rgba(194, 233, 246,.5); */
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
-  margin:auto;
 }
 
 .listOfInvestments {
@@ -284,8 +276,8 @@ body {
 }
 
 .activeAssetsForm {
-  background-color:white;
-  width:15rem;
+  background-color:rgba(255,255,255,.5);
+  width:20vw;
   height:10rem;
   position:absolute;
   top:10rem;
@@ -293,6 +285,20 @@ body {
   flex-direction:column;
   justify-content: flex-end;
   text-align: center;
+  transition:500ms ease-in-out;
+}
+
+.assetContainer {
+  overflow:none;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  position:relative;
+  top:3rem;
+  margin:auto;
+  height:100vh;
+  width:50vw;
+  background-color:rgba(255,255,255,.1);
 }
 
 .showAssetsFormBtn {
@@ -302,20 +308,46 @@ body {
 }
 
 .hiddenAssetsForm {
-  background-color:white;
+  /* background-color:white; */
   width:15rem;
   height:10rem;
   position:absolute;
   top:10rem;
-  left:-100rem;
+  left:-100vw;
   display:flex;
   flex-direction:column;
   justify-content: flex-end;
   text-align: center;
+  transition:500ms ease-in-out;
+
+}
+
+.hideAddAssetBtn {
+  /* background-color:blue; */
+  width:1.5rem;
+  height:1.5rem;
+  position: absolute;
+  top:10rem;;
+  left:13.5rem;
+  z-index:5;
+  text-align: center;
+}
+
+.showAddAssetBtn {
+  background-color:rgba(255,255,255,.5);
+  position:absolute;
+  width:10rem;
+  height:3rem;
+  left:0;
+  top:10rem;
+  text-align:center;
+  border-radius: 3rem;
 }
 
 .postInput {
   width:12rem;
+  background-color:rgba(255,255,255,.5);
+
 }
 
 .newAssetLabel {

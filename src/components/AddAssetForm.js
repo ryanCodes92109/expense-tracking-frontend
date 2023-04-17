@@ -61,13 +61,22 @@ const mappedTransactions = userTransactions.map(transaction => (
     // console.log(mappedTransactions)
 
   return (
-    <div className={toggleAssetsForm ? 'activeAssetsForm' : 'hiddenAssetsForm'}>
-      <span className='showAssetsFormBtn'>Hello</span>
-      <label className ='newAssetLabel'> Submit New Assets</label>
-      <label 
-        className ='hideAssetsFormButton'
+    <>
+        {toggleAssetsForm ? <span 
+        className = 'hideAddAssetBtn'
         onClick={showAssetsForm}
-      >X</label>
+      >X</span> :  <span 
+      className ='showAddAssetBtn'
+      onClick={showAssetsForm}
+    >Click Here To Track New Assets</span>}
+    <div className={toggleAssetsForm ? 'activeAssetsForm' : 'hiddenAssetsForm'}>
+
+      {/* <span onClick={showAssetsForm} className='showAssetsFormBtn'>Hello</span> */}
+      <label className ='newAssetLabel'> Add New Assets</label>
+      {/* <span 
+        className ={toggleAssetsForm ? 'hideAddAssetBtn' : 'showAddAssetBtn'}
+        onClick={showAssetsForm}
+      >X</span> */}
       <form 
         className='AssetPostForm' 
         onSubmit={handleAssetSubmit}>
@@ -115,6 +124,8 @@ const mappedTransactions = userTransactions.map(transaction => (
       </form>
 
     </div>
+
+    </>
   )
 }
 
