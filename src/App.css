@@ -13,6 +13,7 @@ html {
 .App {
   display:fixed;
   overflow:hidden;
+  overflow:hidden;
 
 }
 
@@ -20,6 +21,7 @@ body {
   background: rgb(194,233,246);
   background: linear-gradient(310deg, rgba(194,233,246,1) 0%, rgba(200,255,253,1) 40%, rgba(0,0,0,1) 84%);
   width:100vw;
+  height:100vh;
   height:100vh;
   overflow:none;
   display:fixed;
@@ -37,6 +39,7 @@ body {
   left:5rem;
   top:1rem;
   overflow:none;
+  overflow:none;
 }
 
 .money-icon {
@@ -52,6 +55,7 @@ body {
   height:14vh;
   width:100vw;
   display:fixed;
+  /* position:relative; */
   /* position:relative; */
 }
 
@@ -84,6 +88,7 @@ body {
   left:-100vw;
   transition:750ms;
   overflow:none;
+  overflow:none;
 }
 
 .menuIcon {
@@ -114,7 +119,7 @@ body {
   text-decoration: none;
 }
 
-.navButton:visited {              
+.navButton:visited {                            
   text-decoration: none;
   color:black;
 }
@@ -163,6 +168,8 @@ body {
   font-size: large;
   width:10rem;
   text-align:center;
+  border-radius: 3rem;
+
   border-radius: 3rem;
 
 }
@@ -228,11 +235,13 @@ body {
   box-shadow:  .5em 1em black;
   height: 90vh;
   width:50vw;
+  width:50vw;
   text-align:center;
   position:relative;
   margin:auto;
   display:flex;
   flex-direction:column;
+  top:10rem;
   top:10rem;
 
 }
@@ -268,6 +277,8 @@ body {
 .activeAssetsForm {
   background-color:rgba(255,255,255,.5);
   width:20vw;
+  background-color:rgba(255,255,255,.5);
+  width:20vw;
   height:10rem;
   position:absolute;
   top:10rem;
@@ -297,11 +308,14 @@ body {
   top:5vh;
 }
 
+
+
 .hiddenAssetsForm {
   width:15rem;
   height:10rem;
   position:absolute;
   top:10rem;
+  left:-100vw;
   left:-100vw;
   display:flex;
   flex-direction:column;
@@ -334,6 +348,8 @@ body {
 
 .postInput {
   width:12rem;
+  background-color:rgba(255,255,255,.5);
+
   background-color:rgba(255,255,255,.5);
 }
 
