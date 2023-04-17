@@ -62,6 +62,7 @@ const mappedTransactions = userTransactions.map(transaction => (
 
   return (
     <div className={toggleAssetsForm ? 'activeAssetsForm' : 'hiddenAssetsForm'}>
+      <span className='showAssetsFormBtn'>Hello</span>
       <label className ='newAssetLabel'> Submit New Assets</label>
       <label 
         className ='hideAssetsFormButton'

@@ -5,6 +5,7 @@ import {useState, useContext} from 'react';
 import { UserContext } from '../context/UserContext';
 import Assets from "./Assets";
 import { Link, useNavigate } from "react-router-dom";
+import { TextField } from "@mui/material";
 
 const Account = () => {
 // const navigate = useNavigate()
@@ -14,7 +15,6 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
   const [toggleAuth, setToggleAuth] = useState(false)
 
   const initialPatchFormValues = {
-  
       first_name: "",
       last_name: "",
       email: ""
@@ -74,44 +74,57 @@ const {user, loginFormData, createUserSubmit, signupFormData, signupHandleChange
     
       <div className ='userInfoBox'>
       <span className='accountInfo'>Name: {`${user.first_name} ${user.last_name}`}</span>
+    
+      <span className='accountInfo'>Email: {`${user.email}`} </span>
       <br/>
 
-      <span className='accountInfo'>Email: {`${user.email}`} </span>
-     
+   
 
-        <form onSubmit={userPatch}>
-          <input
-            className='accountInfoPatch'
+        <form 
+          onSubmit={userPatch}
+          className='accountPatchForm'
+        >
+          <TextField
+            className='credentialInput'
             onChange={patchHandleChange}
             name="first_name"
             value={patchFormValues.first_name}
-            placeholder="First Name"></input>
-            <br/>
-            <input
-            className='accountInfoPatch'
-            onChange={patchHandleChange}
+            label="First Name"
+          />
+      
+
+            <TextField
+              className='credentialInput'
+              onChange={patchHandleChange}
               name="last_name"
               value={patchFormValues.last_name}
-              placeholder="Last Name"></input>
-            <br/>
-            <input
-            className='accountInfoPatch'
+              label="Last Name"
+            />
+        
+
+            <TextField
+            className='credentialInput'
             onChange={patchHandleChange}
               name="email"
               value={patchFormValues.email}
-              placeholder="email"></input>
-            <br/>
-            <button 
-            className='accountInfoPatch'
-              type="submit"
-              >Change Your Information</button>
+              label="email"
+            />
 
-              <button 
-        className='accountInfoPatch'
-          onClick={userDelete}>Delete Account</button>
+          <div className = 'accountPatchButtonContainer'>
+ 
+            <button 
+              className='accountPatchBtn'
+              type="submit"
+              >Update</button>
+
+            <button 
+              className='accountPatchBtn'
+              onClick={userDelete}>Delete Account</button>
+
+          </div>
 
         </form>
-            
+     
       </div>
  
   )

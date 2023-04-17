@@ -32,7 +32,6 @@ const Assets = ({assets, user, created_assets}) => {
   return (
     <>
     {/* <div className='listOfInvestments'> */}
-    <span className='showAssetsForm'>Hello</span>
       <AddAssetForm assets={assets}/>
       <div className='assetContainer'>
         {createdAssets}

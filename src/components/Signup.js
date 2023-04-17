@@ -1,6 +1,10 @@
 import React, {useContext, useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
+import TextField from '@mui/material/TextField';
+
+
+
 
 const Signup = ({setToggleAuth}) => {
   const navigate = useNavigate()
@@ -53,40 +57,47 @@ const Signup = ({setToggleAuth}) => {
       <form 
         onSubmit={e => createUserSubmit(e,signupFormData)}
         className= 'signUpForm'>
-        <label>First Name</label>
-          <br/>
-        <input 
+        {/* <label>First Name</label> */}
+          {/* <br/> */}
+        <TextField 
+          className='credentialInput'
           onChange={signupHandleChange} 
           name='first_name'
           value={signupFormData.first_name}
-          placeholder='Enter first name here'></input>
-          <br/>
+          label='First Name'
+        />
+          {/* <br/> */}
 
-        <label>Last Name</label>
-          <br/>
-        <input 
+        {/* <label>Last Name</label> */}
+          {/* <br/> */}
+        <TextField 
+          className='credentialInput'
           onChange={signupHandleChange}
           name = 'last_name'
           value = {signupFormData.last_name}
-          placeholder='Enter Last Name here'></input>
-          <br/>
+          label='Last Name'
+        />
+          {/* <br/> */}
 
-        <label>email</label>
-          <br/>
-        <input 
+        {/* <label>Email</label> */}
+          {/* <br/> */}
+        <TextField 
+          className='credentialInput'
           onChange={signupHandleChange}
           name='email'
           value = {signupFormData.email}
-          placeholder='Enter email address here'></input>
-          <br/>
-          <label>Password</label>
-          <br/>
-          <input 
+          label=' Email'
+        />
+          {/* <br/> */}
+          {/* <label>Password</label> */}
+          <TextField 
+          className='credentialInput'
           onChange={signupHandleChange}
           name='password'
           type='password'
           value={signupFormData.password}
-          placeholder='Enter Password address here' />
+          label='Password' />
+          {/* <br/> */}
 
         <button 
           type = 'submit'
