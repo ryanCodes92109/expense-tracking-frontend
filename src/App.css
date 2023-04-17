@@ -229,6 +229,7 @@ body {
   height: 90vh;
   width:50vw;
   text-align:center;
+
   position:relative;
   margin:auto;
   display:flex;
@@ -243,6 +244,7 @@ body {
   height:70rem;
   position:relative;
   top:0;
+
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
@@ -289,6 +291,7 @@ body {
   height:100vh;
   width:50vw;
   background-color:rgba(255,255,255,.1);
+
 }
 
 .showAssetsFormBtn {
@@ -297,7 +300,9 @@ body {
   top:5vh;
 }
 
+
 .hiddenAssetsForm {
+
   width:15rem;
   height:10rem;
   position:absolute;
@@ -312,6 +317,7 @@ body {
 }
 
 .hideAddAssetBtn {
+
   width:1.5rem;
   height:1.5rem;
   position: absolute;
@@ -335,6 +341,7 @@ body {
 .postInput {
   width:12rem;
   background-color:rgba(255,255,255,.5);
+
 }
 
 .newAssetLabel {
