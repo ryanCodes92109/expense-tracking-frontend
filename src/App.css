@@ -6,13 +6,13 @@
   }
 
 html {
-  display:fixed;
-  overflow:none;
+  position:fixed;
 
 }
 
 .App {
   display:fixed;
+  overflow:hidden;
   overflow:hidden;
 
 }
@@ -21,6 +21,7 @@ body {
   background: rgb(194,233,246);
   background: linear-gradient(310deg, rgba(194,233,246,1) 0%, rgba(200,255,253,1) 40%, rgba(0,0,0,1) 84%);
   width:100vw;
+  height:100vh;
   height:100vh;
   overflow:none;
   display:fixed;
@@ -38,6 +39,7 @@ body {
   left:5rem;
   top:1rem;
   overflow:none;
+  overflow:none;
 }
 
 .money-icon {
@@ -53,6 +55,7 @@ body {
   height:14vh;
   width:100vw;
   display:fixed;
+  /* position:relative; */
   /* position:relative; */
 }
 
@@ -85,6 +88,7 @@ body {
   left:-100vw;
   transition:750ms;
   overflow:none;
+  overflow:none;
 }
 
 .menuIcon {
@@ -111,12 +115,11 @@ body {
 }
 
 .navButton:hover {
-
   color:white;
   text-decoration: none;
 }
 
-.navButton:visited {              
+.navButton:visited {                            
   text-decoration: none;
   color:black;
 }
@@ -149,7 +152,6 @@ body {
   position:absolute;
   top:8rem;
   left:14rem;
-  /* background-color:rgba(255,255,255,.5); */
   transition:500ms;
   z-index:5;
   font-size: large;
@@ -168,6 +170,8 @@ body {
   text-align:center;
   border-radius: 3rem;
 
+  border-radius: 3rem;
+
 }
 
 .toggleMenuLabel {
@@ -184,14 +188,12 @@ body {
   position:absolute;
   left:-50vw;
   top:5rem;
-  /* border:5px solid white; */
   background-color:rgba(255,255,255,.5);
   transition:500ms;
 
 }
 
 .transactionMenuHidden {
-  /* width: 10rem; */
   width:10rem;
   height:10rem;
   background-color:rgba(255,255,255,.5);
@@ -233,12 +235,13 @@ body {
   box-shadow:  .5em 1em black;
   height: 90vh;
   width:50vw;
+  width:50vw;
   text-align:center;
-  /* margin-top: 2.5vh; */
   position:relative;
   margin:auto;
   display:flex;
   flex-direction:column;
+  top:10rem;
   top:10rem;
 
 }
@@ -249,7 +252,6 @@ body {
   height:70rem;
   position:relative;
   top:0;
-  /* background-color: rgba(194, 233, 246,.5); */
   justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
@@ -258,7 +260,6 @@ body {
 .listOfInvestments {
   display:flex;
   justify-content: space-around;
-  
   align-content: space-around;
   flex-wrap: wrap;
 }
@@ -269,14 +270,13 @@ body {
   color:black;
   border: .2vw solid black;
   box-shadow:  .5em .5em black;
-  /* margin-top: 8vh; */
-  /* margin-right:1rem;
-  margin-left:1rem; */
   margin:2rem;
   border-radius:.2vw;
 }
 
 .activeAssetsForm {
+  background-color:rgba(255,255,255,.5);
+  width:20vw;
   background-color:rgba(255,255,255,.5);
   width:20vw;
   height:10rem;
@@ -302,12 +302,20 @@ body {
   background-color:rgba(255,255,255,.1);
 }
 
+.showAssetsFormBtn {
+  color:white;
+  position:absolute;
+  top:5vh;
+}
+
+
+
 .hiddenAssetsForm {
-  /* background-color:white; */
   width:15rem;
   height:10rem;
   position:absolute;
   top:10rem;
+  left:-100vw;
   left:-100vw;
   display:flex;
   flex-direction:column;
@@ -318,7 +326,6 @@ body {
 }
 
 .hideAddAssetBtn {
-  /* background-color:blue; */
   width:1.5rem;
   height:1.5rem;
   position: absolute;
@@ -343,14 +350,86 @@ body {
   width:12rem;
   background-color:rgba(255,255,255,.5);
 
+  background-color:rgba(255,255,255,.5);
 }
 
 .newAssetLabel {
   position:absolute;
-  /* display:flex; */
   top:2rem;
   left:1.5rem;
 }
+
+.credentialContainer {
+  display:flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  margin:auto;
+  max-width:15vw;
+  min-width:30vw;
+  max-height:60vh;
+  min-height: 40vh;
+  top:10vh;
+}
+
+.signUpForm {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height:80vh;
+}
+
+.credentialInput {
+  width:100%;
+  margin:2rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.accountPatchBtn {
+  width:10vw;
+}
+
+.accountPatchForm {
+  display:flex;
+  flex-direction:column;
+  height:60vh;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.signinForm {
+  display:flex;
+  flex-direction:column;
+  border: solid 5px black;
+  min-height:40vh;
+  min-width:30vw;
+}
+
+.signinButton {
+  max-width:5vw;
+  /* margin:auto; */
+}
+
+/* .accountPatchButtonContainer {
+
+} */
+
+.userInfoBox {
+  display:flex;
+  flex-direction: column;
+  position:relative;
+  top:15vh;
+  max-width:30vw;
+  min-height:40vh;
+  max-height:60vh;
+  max-width:50vh;
+  margin:auto;
+  background-color:rgba(211, 211, 211, .5)
+}
+
+
 
 /*
 
@@ -451,15 +530,7 @@ body {
 
 
 
-.credentialContainer {
-  display:flex;
-  position: relative;
-  top:20vh;
-  margin:auto;
-  width:15vw;
-  height:40vh;
-  background-color: lightblue;
-}
+
 
 .signinForm {
   border: solid 5px black;

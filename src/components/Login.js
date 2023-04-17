@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { UserContext } from '../context/UserContext'
 import { Link, useNavigate } from 'react-router-dom'
+import TextField from '@mui/material/TextField';
 
 const Home = ({setToggleAuth}) => {
   const navigate = useNavigate()
@@ -50,27 +51,30 @@ const Home = ({setToggleAuth}) => {
       <form 
         onSubmit={(e) => loginSubmit(e, loginFormData)}
         className = 'signinForm'>
-        <label>Email</label>
           <br/>
-        <input 
+        <TextField 
           onChange={handleChange}
+          className='credentialInput'
           name='email'
           value={loginFormData.email}
-          placeholder='Enter Username here'></input>
+          label='Email'
+        />
           <br/>
 
-        <label>Password</label>
-          <br/>
-        <input 
+         
+        <TextField 
+          className='credentialInput'
           onChange={handleChange}
           name='password'
           type='password'
-          placeholder='Enter Password here'
+          label='Password'
           value={loginFormData.password}
-          ></input>
+        />
           
           <br/>
+
         <button 
+          className='signinButton'
           type='submit'>
             Sign In
           </button>
