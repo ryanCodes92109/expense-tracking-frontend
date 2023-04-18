@@ -26,13 +26,11 @@ const NavBar = () => {
         
         <ul className={toggleMenu ? 'navBarActive' : 'navBarHidden'}>
         
-
-
           <Link to='/transactions'>
             <li className='navButton'>Transactions</li>
           </Link>
-          <Link to='/assets'>
 
+          <Link to='/assets'>
             <li className='navButton'>Investments</li>
           </Link>
 
@@ -40,7 +38,6 @@ const NavBar = () => {
             <div className ='navButtonParent'>
               <li className='navButton'>Account</li>
             </div>
-
           </Link>
 
           <Link to='/logout'>

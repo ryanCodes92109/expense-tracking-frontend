@@ -61,14 +61,14 @@ body {
 
 .navBarActive {
   position:absolute;
-  width: 40rem;
+  width: 10rem;
+  height:10rem;
   margin:auto;
   list-style:none;
   display:flex;
   justify-content:flex-end;
   align-items:top;
-  transition:750ms;
-  /* border:solid red; */
+  transition:750ms ease-in-out;
   right:5rem;
   top:.1rem;
 
@@ -79,15 +79,15 @@ body {
   height:10rem;
   background-color:rgba(255,255,255,.5);
   display:flex;
-  flex-direction: column;
-  align-content:center;
+  /* flex-direction: column; */
+  align-items:top;
   justify-content:center;
   padding:1rem;
   position:absolute;
-  left:-100vw;
-  transition:750ms;
+  right:-100vw;
+  transition:750ms ease-in-out;
   overflow:none;
-  overflow:none;
+  top:.1rem;
 }
 
 .menuIcon {
@@ -237,34 +237,43 @@ body {
 .transactions {
   background-color: white;
   box-shadow:  .5em 1em black;
-  height: 90vh;
-  max-width:70vw;
-  min-width:70vw;
+  height: 80vh;
+  max-width:60vw;
+  min-width:60vw;
   text-align:center;
   position:relative;
   margin:auto;
   display:flex;
   flex-direction:column;
-  top:5rem;
+  top:2vh;
   z-index:1;
 }
 
 .assetContainer {
   display:flex;
-  width: 55rem;
-  height:70rem;
+  /* flex-direction: column; */
+  width: 55vw;
+  height:70vh;
   position:relative;
-  top:0;
-  justify-content: space-around;
   flex-wrap: wrap;
   overflow:scroll;
+  margin:auto;
+ 
 }
 
 .listOfInvestments {
   display:flex;
-  justify-content: space-around;
-  align-content: space-around;
+  justify-content: center;
+  /* align-content: space-around; */
   flex-wrap: wrap;
+  /* margin:auto; */
+}
+
+.investmentList {
+  display:flex;
+  position:relative;
+  top:20rem;
+  margin:auto;
 }
 
 .investmentCard {
@@ -278,16 +287,16 @@ body {
 }
 
 .activeAssetsForm {
-  background-color:rgba(255,255,255,.5);
-  width:20vw;
-  background-color:rgba(255,255,255,.5);
+  z-index:5;
+  background-color:lightgrey;
   width:20vw;
   height:10rem;
   position:absolute;
   top:10rem;
+  left:1rem;
   display:flex;
   flex-direction:column;
-  justify-content: flex-end;
+  justify-content: center;
   text-align: center;
   transition:500ms ease-in-out;
 }
@@ -297,21 +306,21 @@ body {
   display:flex;
   justify-content: center;
   align-content: center;
-  position:relative;
-  top:3rem;
+  position:absolute;
+  top:5rem;
   margin:auto;
-  height:100vh;
-  width:50vw;
-  background-color:rgba(255,255,255,.1);
+  height:80vh;
+  width:70vw;
+  background-color:rgba(255,255,255,.5);
 }
 
 .showAssetsFormBtn {
   color:white;
   position:absolute;
   top:5vh;
+  transition:500ms ease-in-out;
+
 }
-
-
 
 .hiddenAssetsForm {
   width:15rem;
@@ -333,9 +342,11 @@ body {
   height:1.5rem;
   position: absolute;
   top:10rem;;
-  left:13.5rem;
-  z-index:5;
+  left:12rem;
+  z-index:50;
   text-align: center;
+  transition:500ms ease-in-out;
+
 }
 
 .showAddAssetBtn {
@@ -358,7 +369,7 @@ body {
 
 .newAssetLabel {
   position:absolute;
-  top:2rem;
+  top:0;
   left:1.5rem;
 }
 
@@ -368,11 +379,12 @@ body {
   justify-content: space-between;
   align-items: center;
   margin:auto;
-  max-width:15vw;
-  min-width:30vw;
-  max-height:60vh;
-  min-height: 40vh;
+  height:80vh;
+  width:40vw;
   top:10vh;
+  /* border:5px solid black; */
+  background-color: lightgrey;
+  box-shadow: 3px 9px black;
 }
 
 .signUpForm {
@@ -380,6 +392,9 @@ body {
   flex-direction: column;
   justify-content: space-around;
   height:80vh;
+  width:40vw;
+  /* border:5px solid red; */
+
 }
 
 .credentialInput {
@@ -394,24 +409,20 @@ body {
   width:10vw;
 }
 
-.accountPatchForm {
-  display:flex;
-  flex-direction:column;
-  height:60vh;
-  justify-content: space-around;
-  text-align: center;
-}
 
 .signinForm {
   display:flex;
   flex-direction:column;
-  border: solid 5px black;
-  min-height:40vh;
-  min-width:30vw;
+  justify-content:center;
+  height:60vh;
+  width:40vw;
+  margin:auto;
 }
 
 .signinButton {
-  max-width:5vw;
+  max-width:12vw;
+  min-width:8rem;
+  /* background-color: aqua; */
   /* margin:auto; */
 }
 
@@ -423,14 +434,26 @@ body {
   display:flex;
   flex-direction: column;
   position:relative;
-  top:15vh;
-  max-width:30vw;
-  min-height:40vh;
-  max-height:60vh;
-  max-width:50vh;
+  top:10vh;
+  min-height:60vh;
+  /* max-height:60vh; */
+  max-width:60vh;
   margin:auto;
-  background-color:rgba(211, 211, 211, .5)
+  background-color:rgba(211, 211, 211, .5);
+  /* border:5px solid red; */
+  overflow:scroll;
 }
+
+.accountPatchForm {
+  display:flex;
+  flex-direction:column;
+  height:40vh;
+  /* border:5px solid black; */
+  justify-content: space-between;
+  text-align: center;
+  overflow:scroll;
+}
+
 
 
 

@@ -100,6 +100,7 @@ const Signup = ({setToggleAuth}) => {
           {/* <br/> */}
 
         <button 
+          className='signinButton'
           type = 'submit'
           >Create an Account</button>
 
