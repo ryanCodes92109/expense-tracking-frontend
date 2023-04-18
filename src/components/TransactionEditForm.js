@@ -1,6 +1,7 @@
 import {useContext, useState} from 'react'
 import { UserContext } from '../context/UserContext'
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
+import {Select, Button, TextField}  from '@mui/material';
 
 
 
@@ -103,19 +104,20 @@ const mappedAssets = userAssets.map(asset =>  (
             onChange={handleTransactionChange}
           />
 
-          <select 
+          <Select 
             className = 'addTransactionFormInput'
             name='asset_id'
             value={formTransactionData.asset_id}
             onChange={handleTransactionChange}
           >
             {mappedAssets}
-          </select> 
+          </Select> 
         
-          <button 
+          <Button 
             className ='submitButton' 
+            color="primary"
             type='submit' 
-          >Add Transaction</button>
+          >Add Transaction</Button>
           
         </form> 
       </div>
