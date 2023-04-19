@@ -15,7 +15,7 @@ const AddAssetForm = ({assets}) => {
 
     const [formAssetData, setFormAssetData] = useState(initialAssetFormValues)
 
-    const [toggleAssetsForm, setToggleAssetsForm] = useState(true)
+    const [toggleAssetsForm, setToggleAssetsForm] = useState(false)
 
     const showAssetsForm = () => setToggleAssetsForm(!toggleAssetsForm)
 

@@ -20,9 +20,9 @@ const Transactions = ({transactionData, setTransactionData}) => {
   }
 
     const columns = [
-    {field:"id", headerName:'Id', editable: true},
+    // {field:"id", headerName:'Id', editable: true},
 
-    {field: "asset_id", HeaderName:"Associated Asset", editable:true, width:300},
+    // {field: "asset_id", headerName:"Associated Asset", editable:true, width:300},
     {field:"vendor_name", headerName:'Place of Purchase',editable: true, width:300},
     {field:"amount_spent", headerName:'Amount',editable: true, width:300} 
 
