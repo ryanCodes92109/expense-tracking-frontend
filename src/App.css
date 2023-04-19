@@ -263,9 +263,10 @@ body {
 
 .assetContainer {
   display:flex;
+  align-items:center;
   /* flex-direction: column; */
   width: 55vw;
-  height:70vh;
+  height:75vh;
   position:relative;
   flex-wrap: wrap;
   overflow:scroll;
@@ -276,15 +277,14 @@ body {
 .listOfInvestments {
   display:flex;
   justify-content: center;
-  /* align-content: space-around; */
+  align-content: space-around;
   flex-wrap: wrap;
-  /* margin:auto; */
 }
 
 .investmentList {
   display:flex;
   position:relative;
-  top:20rem;
+  top:15rem;
   margin:auto;
 }
 
