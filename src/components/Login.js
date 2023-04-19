@@ -50,7 +50,9 @@ const Home = ({setToggleAuth}) => {
       
       <form 
         onSubmit={(e) => loginSubmit(e, loginFormData)}
-        className = 'signinForm'>
+        className = 'signinForm'
+      >
+        <span className='loginTitle'>Where's My Money!</span>
           <br/>
         <TextField 
           onChange={handleChange}

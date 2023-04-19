@@ -53,10 +53,13 @@ const Signup = ({setToggleAuth}) => {
   return (
 
     <div className='credentialContainer'>
-
+      <span className='signupTitle'>Where's My Money! <br/> <span className='createAnAccountText'>Create an Account!</span>
+      </span>
       <form 
         onSubmit={e => createUserSubmit(e,signupFormData)}
         className= 'signUpForm'>
+
+        
         {/* <label>First Name</label> */}
           {/* <br/> */}
         <TextField 
